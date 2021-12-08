@@ -101,7 +101,7 @@
   
   .circular-slider .wrapper .slides-holder {
     border-radius: 50%;
-    border: 2px solid #8EB8E5;
+    border: 6px solid #F0F4EF;
     -webkit-transform-origin: center;
     -ms-transform-origin: center;
     transform-origin: center;
@@ -122,19 +122,19 @@
   
   .circular-slider .wrapper .slides-holder__item {
     border-radius: 50%;
-    border: 2px solid #7C99B4;
+    // border: 2px solid #F0F4EF;
     position: absolute;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-transform-origin: center;
     -ms-transform-origin: center;
     transform-origin: center;
-    background-color: #222;
+    // background-color: #222;
     -webkit-transition: .3s linear all;
     -o-transition: .3s linear all;
     transition: .3s linear all;
-    -webkit-filter: brightness(70%);
-    filter: brightness(70%);
+    -webkit-filter: brightness(100%);
+    filter: brightness(100%);
   }
   
   .circular-slider .wrapper .slides-holder__item img {
