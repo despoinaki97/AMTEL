@@ -16,17 +16,25 @@
           </div> -->
         </div>
         <div class="slides-holder">
-          <div class="slides-holder__item slides-holder__item_active"><img src="../../../assets/Group 40.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 41.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 43.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 44.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 45.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 46.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 47.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 48.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 49.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 50.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 51.png" class="week" alt="img"/></div>
+          <div class="slides-holder__item" (click)="openLectures()" style="padding: 0%;"><img src="../../../assets/Group 40.png" class="week" alt="img"/>
+          <ul class="lectures"  style="list-style: none; display: none;" (click)="chooseLecture()" >
+            <li class="lecture" *ngFor="let lecture of lectureslist"  style=" transform: rotate(180deg);">
+              <p class="lectext">{{lecture.title}}</p>
+              <img id= "lectureImage" src="../../../assets/Rectangle 6.png"/>
+            </li>
+        
+          </ul>
+          </div>            
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 41.png" class="week" alt="img"/></button>
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 43.png" class="week" alt="img"/></button>
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 44.png" class="week" alt="img"/></button>
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 45.png" class="week" alt="img"/></button>
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 46.png" class="week" alt="img"/></button>
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 47.png" class="week" alt="img"/></button>
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 48.png" class="week" alt="img"/></button>
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 49.png" class="week" alt="img"/></button>
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 50.png" class="week" alt="img"/></button>
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 51.png" class="week" alt="img"/></button>
 
         </div>
          <!-- <div class="descriptions">
