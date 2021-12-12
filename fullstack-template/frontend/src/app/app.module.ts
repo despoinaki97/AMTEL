@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
 import { TableComponent } from './pages/table/table.component';
 import { TabletComponent } from './pages/tablet/tablet.component';
+import { SelectRoomComponent } from './pages/tablet/select-room/select-room.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
-    TabletComponent
+    TabletComponent,
+    SelectRoomComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,107 @@
+ /* Bordered form */
+ .mainContainer {
+    background-color: #B4CDED;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  
+  #title {
+      margin-top: 40%;
+      margin-bottom: 15%;
+      color: #F0F4EF;
+      font-size: 850%;
+      font-family: 'Roboto', sans-serif;
+      display: block;
+  }
+  
+  .btn-secondary {
+    background-color: #0D1821;
+    font-size: 350%;
+    color: #F0F4EF;
+    width: 50%;
+    height: 6%;
+    line-height: 5px;
+    text-align: center;
+    border-radius: 2%;
+    margin-top: 6%;
+  }
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+  
+   /* Dropdown Button */
+.dropbtn {
+  width: 80%;
+  margin-left: 10%;
+  display: block;
+  background-color: #F0F4EF;
+  text-align: left;
+  color: #B4CDED;
+  font-weight: bold;
+  font-size: 220%;
+  height: 7%;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  height: 100%;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 80%;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  border: 3px solid #ccc;
+  z-index: 1;
+  margin-left: 10%;
+  text-align: left;
+  //height: 24%;
+  background-color: #F0F4EF;
+  color: #B4CDED;
+  font-weight: bold;
+  font-size: 200%;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #B4CDED;
+  padding: 20px 16px;
+  text-decoration: none;
+  display: block;
+  height: 16%;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #0D1821;} 
+
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 820px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    #title {
+      margin-top: 30%;
+      font-size: 420%;
+    }
+    .btn-secondary {
+      font-size: 210%;
+      width: 50%;
+      height: 7%;
+    }
+    .dropbtn {
+      font-size: 170%;
+    }
+  } 
