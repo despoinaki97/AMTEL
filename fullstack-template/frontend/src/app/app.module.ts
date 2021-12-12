@@ -7,13 +7,15 @@ import { AppRoutingModule } from './app.routing';
 import { TableComponent } from './pages/table/table.component';
 import { TabletComponent } from './pages/tablet/tablet.component';
 import { SelectRoomComponent } from './pages/tablet/select-room/select-room.component';
+import { ProfileOptionsComponent } from './pages/tablet/profile-options/profile-options.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
     TabletComponent,
-    SelectRoomComponent
+    SelectRoomComponent,
+    ProfileOptionsComponent
   ],
   imports: [
     BrowserModule,
