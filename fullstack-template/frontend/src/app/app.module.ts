@@ -5,11 +5,13 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
 import { TableComponent } from './pages/table/table.component';
+import { BubblemenuComponent } from './pages/bubblemenu/bubblemenu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TableComponent
+    TableComponent,
+    BubblemenuComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { on } from 'process';
 import { $ } from 'protractor';
 import {Lecture} from 'src/app/Objects/Lecture'
+import { BubblemenuComponent } from 'src/app/pages/bubblemenu/bubblemenu.component';
 declare const window:any
 @Component({
   selector: 'my-table',
@@ -10,7 +11,32 @@ declare const window:any
 })
 export class TableComponent implements OnInit {
   lectureslist:Lecture[];
-  constructor() { }
+  flagopenedlecture:boolean;
+  bbmenu:BubblemenuComponent;
+  bbmenu2:BubblemenuComponent;
+  bbmenu3:BubblemenuComponent;
+
+  currphoto = '../../../assets/Despoina.jpg';
+  currphoto2= '../../../assets/Dimitra.jpg';
+  currphoto3= '../../../assets/HC.jpg';
+
+  olids:number[];
+  constructor() { 
+    this.bbmenu = new BubblemenuComponent();
+    this.bbmenu2 = new BubblemenuComponent();
+    this.bbmenu3 = new BubblemenuComponent();
+
+
+
+    this.olids=[];
+    this.flagopenedlecture=false;
+    this.lectureslist=[
+      {id:0,title:"Tutorial on Project"},
+      {id:1,title:"Multimodal Interaction and Intelligent Interfaces"},
+      {id:2,title:"Interface Design for Mobile and Wearable Devices, Automoblies and the New Media"}
+    ]
+  }
+
 
 openLectures(){
   console.log("opened");
@@ -22,18 +48,53 @@ openLectures(){
   }
 }
 
-chooseLecture(){
-  console.log("choose");
-  var lecimg = document.getElementById('lectureImage') as HTMLElement;
-  lecimg.style.backgroundImage = "../../../assets/Rectangle 4.png";
+chooseLecture(id:number){
+  console.log("choose" + id);
+  var imgid = 'lectureImage' + id;
+  var mydivid='mydiv' + id;
+
+ if(this.flagopenedlecture == false){
+    var lecimg = document.getElementById(imgid) as HTMLImageElement;
+    lecimg.src = "../../../assets/Rectangle 4.png";
+    this.flagopenedlecture = true;
+    
+    
+    document.getElementById(mydivid).style.cssText='z-index: 9;background-color: #f1f1f1;text-align: center;border: 1px solid #d3d3d3;'
+  
+    this.olids.push(id);
+   
+  }else{
+    this.olids.forEach(element => {
+      var elementmix = 'lectureImage' + element;
+      var mydivmix='mydiv' + element;
+      var lecimgpop = document.getElementById(elementmix) as HTMLImageElement;
+      lecimgpop.src = "../../../assets/Rectangle 6.png";
+      document.getElementById(mydivmix).style.display='none';
+
+      this.olids.pop();
+      console.log(elementmix);
+    });
+    var lecimg = document.getElementById(imgid) as HTMLImageElement;
+    lecimg.src = "../../../assets/Rectangle 4.png";
+   
+    document.getElementById(mydivid).style.cssText='z-index: 9;background-color: #f1f1f1;text-align: center;border: 1px solid #d3d3d3;'
+  
+    this.olids.push(id);
+  
+  } 
+
+  
 }
 
   ngOnInit() {
-    this.lectureslist=[
-      {id:1,title:"Tutorial on Project"},
-      {id:2,title:"Multimodal Interaction and Intelligent Interfaces"},
-      {id:3,title:"Interface Design for Mobile and Wearable Devices, Automoblies and the New Media"}
-    ]
+
+    this.bbmenu.dragElement(document.getElementById("user1"));
+
+
+   this.bbmenu2.dragElement(document.getElementById("user2"));
+    //console.log(this.bbmenu);
+    
+    this.bbmenu3.dragElement(document.getElementById("user3"));
 
     document.getElementsByClassName('lectures')[0].addEventListener('click',function (event){
       event.stopPropagation();
