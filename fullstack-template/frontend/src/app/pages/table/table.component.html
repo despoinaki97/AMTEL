@@ -1,4 +1,9 @@
 <div id="slider">
+<ami-fullstack-bubblemenu [photo]="currphoto" id="user1"></ami-fullstack-bubblemenu>
+<ami-fullstack-bubblemenu [photo]="currphoto2" id="user2"></ami-fullstack-bubblemenu>
+<ami-fullstack-bubblemenu [photo]="currphoto3" id="user3"></ami-fullstack-bubblemenu>
+
+
     <div class="circular-slider circular-slider-1">
       <div class="wrapper">
         <div class="controls">
@@ -16,17 +21,31 @@
           </div> -->
         </div>
         <div class="slides-holder">
-          <div class="slides-holder__item slides-holder__item_active"><img src="../../../assets/Group 40.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 41.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 43.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 44.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 45.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 46.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 47.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 48.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 49.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 50.png" class="week" alt="img"/></div>
-          <div class="slides-holder__item"><img src="../../../assets/Group 51.png" class="week" alt="img"/></div>
+       
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 40.png" class="week" alt="img"/></button>
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 41.png" class="week" alt="img"/></button>
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 43.png" class="week" alt="img"/></button>
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 44.png" class="week" alt="img"/></button>
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 45.png" class="week" alt="img"/></button>
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 46.png" class="week" alt="img"/></button>
+          <div class="slides-holder__item" (click)="openLectures()" style="padding: 0%;"><img src="../../../assets/Group 47.png" class="week" alt="img"/>
+            <ul class="lectures"  style="list-style: none; display: none; padding: 0%;" >
+              <div class="triangle-down"></div>
+
+              <li class="lecture" *ngFor="let lecture of lectureslist; let i = index"  style=" transform: rotate(180deg);" (click)="chooseLecture(lecture.id)" >
+                <p class="lectext">{{lecture.title}}</p>
+                <img id= "{{'lectureImage'+i}}" style="width:100%; float:left;" src="../../../assets/Rectangle 6.png"/>
+                <div id="{{'mydiv'+i}}" style="display: none; width: 50%; float:right">
+                  <div>Click here to move</div>
+                </div>
+              </li>
+            
+            </ul>
+            </div>            
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 48.png" class="week" alt="img"/></button>
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 49.png" class="week" alt="img"/></button>
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 50.png" class="week" alt="img"/></button>
+          <button class="slides-holder__item" style="padding: 0%;"><img src="../../../assets/Group 51.png" class="week" alt="img"/></button>
 
         </div>
          <!-- <div class="descriptions">
@@ -57,4 +76,6 @@
         </div>  -->
       </div>
     </div>
+
   </div>
+
