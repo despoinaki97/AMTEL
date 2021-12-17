@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { User } from 'src/app/Objects/User';
 
 @Component({
   selector: 'ami-fullstack-bubblemenu',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./bubblemenu.component.scss']
 })
 export class BubblemenuComponent implements OnInit {
-  @Input() photo ='';
+  @Input() user :User;
 
   constructor() { 
 
@@ -54,9 +55,42 @@ export class BubblemenuComponent implements OnInit {
     }
   }
 
+  openreactions(user: User){
+    user = this.user;
+    console.log(this.user);
+    if(user.id == 1 ){
+      console.log("despo");
+      let reacts = document.getElementsByClassName(user.name)[0] as HTMLElement;
+      reacts = reacts.getElementsByClassName("reactions")[0] as HTMLElement;
+      if (reacts.style.display === "none") {
+       reacts.style.display = "block";
+     } else {
+       reacts.style.display = "none";
+     }
+    }else if(user.id== 2){
+      console.log("dim");
+      let reacts = document.getElementsByClassName(user.name)[0] as HTMLElement;
+      reacts = reacts.getElementsByClassName("reactions")[0] as HTMLElement;     
+       if (reacts.style.display === "none") {
+       reacts.style.display = "block";
+     } else {
+       reacts.style.display = "none";
+     }
+    }else{
+      
+      console.log("abd");
+      let reacts = document.getElementsByClassName(user.name)[0] as HTMLElement;
+      reacts = reacts.getElementsByClassName("reactions")[0] as HTMLElement;  
+       if (reacts.style.display === "none") {
+    reacts.style.display = "block";
+  } else {
+    reacts.style.display = "none";
+  }
+    }
+   
+  }
 
   ngOnInit() {
-
   }
 
 }
