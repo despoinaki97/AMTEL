@@ -11,7 +11,7 @@
       margin-top: 40%;
       margin-bottom: 15%;
       color: #F0F4EF;
-      font-size: 850%;
+      font-size: 900%;
       font-family: 'Roboto', sans-serif;
       display: block;
   }
@@ -38,7 +38,7 @@
   #forgotpas {
     display: block;
     width: 100%;
-    margin-left: 10%;
+    margin-left: 11%;
     text-align: left;
     font-size: 220%;
   }
@@ -67,20 +67,22 @@
     }
     #title {
       margin-top: 30%;
-      font-size: 420%;
+      font-size: 350%;
     }
     .btn-secondary {
-      font-size: 210%;
+      font-size: 160%;
       width: 50%;
       height: 7%;
     }
     input[type=text], input[type=password] {
       height: 8%;
+      margin-bottom: 0.1%;
     }
     ::placeholder {
-      font-size: 150%;
+      font-size: 80%;
     }
     #forgotpas {
-      font-size: 150%;
+      font-size: 90%;
+      margin-top: 0.7%;
     }
   } 

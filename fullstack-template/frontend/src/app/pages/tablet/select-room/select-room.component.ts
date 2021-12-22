@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./select-room.component.scss']
 })
 export class SelectRoomComponent implements OnInit {
-
+  
   constructor() { }
-
+  
   ngOnInit(): void {
   }
+  
 
 }
