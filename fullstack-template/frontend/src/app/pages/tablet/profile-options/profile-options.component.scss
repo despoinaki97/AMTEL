@@ -6,14 +6,7 @@
     height: 100%;
     text-align: center;
 }
-/*
- <select class="form-select" aria-label="Default select example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-*/
+
 #profilepic {
     border-radius: 50%;
     margin-top: 18%;
@@ -29,7 +22,7 @@
     display: block;
 }
 
-#op1,#op2,#op3 {
+.profileOption {
     color: black;
     display: block;
     font-size: 360%;
@@ -37,7 +30,8 @@
     margin-left: 15%;
     margin-bottom: 5%;
     font-family: 'Roboto', sans-serif;
-    :hover {
-        color: #AA8585
-    }
+
 }
+
+.profileOption:hover {color:#AA8585;}
+  
