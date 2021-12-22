@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { transform } from 'lodash';
 import { on } from 'process';
 import { $ } from 'protractor';
 import { UsersService } from 'src/app/global/services/users/users.service';
@@ -46,9 +47,10 @@ export class TableComponent implements OnInit {
   }
 
 
-  openLectures(){
+  openLectures(name:string){
     console.log("opened");
-    let lects = document.getElementsByClassName('lectures')[0] as HTMLElement;
+    let lecs= document.getElementsByName(name)[0] as HTMLElement;
+    let lects = lecs.getElementsByClassName('lectures')[0] as HTMLElement;
     if (lects.style.display === "none") {
       lects.style.display = "block";
     } else {
@@ -61,6 +63,7 @@ export class TableComponent implements OnInit {
     var imgid = 'lectureImage' + id;
     var mydivid='mydiv' + id;
   
+
    if(this.flagopenedlecture == false){
       var lecimg = document.getElementById(imgid) as HTMLImageElement;
       lecimg.src = "../../../assets/Rectangle 4.png";
@@ -90,13 +93,21 @@ export class TableComponent implements OnInit {
       this.olids.push(id);
     
     } 
-  
+    // this.flagopenedlecture =false;
     
   }
 
   ngOnInit() {
 
-
+    document.getElementById("slider").addEventListener('dblclick',function (){
+      console.log("double click");
+      let shelement = document.getElementsByClassName("slides-holder")[0] as HTMLElement;
+      if (shelement.style.display === "none") {
+        shelement.style.display = "flex";
+      } else {
+        shelement.style.display = "none";
+      }
+   });
 
     this.bbmenu.dragElement(document.getElementById("user1"));
       
@@ -113,9 +124,20 @@ console.log(despobutton);
     
     this.bbmenu3.dragElement(document.getElementById("user3"));
 
-    document.getElementsByClassName('lectures')[0].addEventListener('click',function (event){
-      event.stopPropagation();
-   });
+   let leccollect =   document.getElementsByClassName('lectures');
+   for(let i =0;i<leccollect.length;i++){
+      leccollect[i].addEventListener('click',function (event){
+        event.stopPropagation();
+     });
+    
+   }
+
+
+  
+  
+//    document.getElementById('minimenu').addEventListener('click',function (event){
+//     event.stopPropagation();
+//  });
 
     ( function() {
       'use strict';

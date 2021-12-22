@@ -60,18 +60,22 @@ a {
  }
  
  
+
+ 
   #menu-item {
     // transition: all 0.1s ease 0s;
+    border: none;
     background-color: #B4CDED;
     box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
     
  } 
  
- #menu-item:hover {
-    background: #EEEEEE;
-    color: #3290B1;
+ #menu-item:focus{
+   background-color: #61FF53;
  }
+
+
  
 //  #menu-item:nth-child(3) {
 //     -webkit-transition-duration: 180ms;
@@ -144,6 +148,7 @@ a {
     // -webkit-transition-duration: 180ms;
     // -webkit-transform: translate3d(0.08361px, -104.99997px, 0);
     transform: translate3d(0.08361px, -104.99997px, 0);
+    
  }
  
  .menu-open ~ #menu-item:nth-child(4) {
