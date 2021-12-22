@@ -1,9 +1,10 @@
 export class User {
 
     constructor(
-        public photo: string,
-        public name:string
-  
+      public id:number,
+      public photo: string,
+      public name:string
+        
       ) { }
 
     }
