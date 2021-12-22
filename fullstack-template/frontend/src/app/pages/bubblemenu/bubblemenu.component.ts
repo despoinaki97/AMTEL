@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { User } from 'src/app/Objects/User';
 
 @Component({
   selector: 'ami-fullstack-bubblemenu',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./bubblemenu.component.scss']
 })
 export class BubblemenuComponent implements OnInit {
-  @Input() photo ='';
+  @Input() user :User;
 
   constructor() { 
 
@@ -54,9 +55,76 @@ export class BubblemenuComponent implements OnInit {
     }
   }
 
-
-  ngOnInit() {
-
+  openreactions(user: User){
+    user = this.user;
+    console.log(this.user);
+    if(user.id == 1 ){
+      console.log("despo");
+      let reacts = document.getElementsByClassName(user.name)[0] as HTMLElement;
+      reacts = reacts.getElementsByClassName("reactions")[0] as HTMLElement;
+      if (reacts.style.display === "none") {
+       reacts.style.display = "block";
+     } else {
+       reacts.style.display = "none";
+     }
+    }else if(user.id== 2){
+      console.log("dim");
+      let reacts = document.getElementsByClassName(user.name)[0] as HTMLElement;
+      reacts = reacts.getElementsByClassName("reactions")[0] as HTMLElement;     
+       if (reacts.style.display === "none") {
+       reacts.style.display = "block";
+     } else {
+       reacts.style.display = "none";
+     }
+    }else{
+      
+      console.log("abd");
+      let reacts = document.getElementsByClassName(user.name)[0] as HTMLElement;
+      reacts = reacts.getElementsByClassName("reactions")[0] as HTMLElement;  
+       if (reacts.style.display === "none") {
+    reacts.style.display = "block";
+  } else {
+    reacts.style.display = "none";
+  }
+    }
+   
   }
 
+
+  raisehand(user:User){
+   
+    // let handparent = document.getElementsByName("raise-hand")[0] as HTMLElement;
+    // let class_userid = handparent.className;
+    // user = this.user;
+    // console.log(this.user);
+    // if(user.name == "Despoina" ){
+      
+    //   console.log(class_userid);
+    //   let reacts = document.getElementsByClassName(user.name)[0] as HTMLElement;
+    //   reacts.style.backgroundColor = '#61FF53';
+     
+    // }
+  }
+
+
+  ngOnInit() {
+    if(this.user.id==1){
+      let icons = document.getElementsByClassName('controlbut');
+      let userimg = document.getElementsByClassName('userface')[0] as HTMLElement;
+      userimg.style.transform = "rotate(90deg)";
+     
+      let icons0 = icons[0] as HTMLElement
+      icons0.style.transform = "rotate(90deg)";
+      let icons1 = icons[1] as HTMLElement
+      icons1.style.transform = "rotate(90deg)";
+      let icons2 = icons[2] as HTMLElement
+      icons2.style.transform = "rotate(90deg)";
+      let icons3 = icons[3] as HTMLElement
+      icons3.style.transform = "rotate(90deg)";
+      let icons4 = icons[4] as HTMLElement
+      icons4.style.transform = "rotate(90deg)";
+      let icons5 = icons[5] as HTMLElement
+      icons5.style.transform = "rotate(90deg)";
+    }
+  }
 }

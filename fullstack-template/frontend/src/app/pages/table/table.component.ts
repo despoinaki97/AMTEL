@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { transform } from 'lodash';
 import { on } from 'process';
 import { $ } from 'protractor';
+import { UsersService } from 'src/app/global/services/users/users.service';
 import {Lecture} from 'src/app/Objects/Lecture'
+import { User } from 'src/app/Objects/User';
 import { BubblemenuComponent } from 'src/app/pages/bubblemenu/bubblemenu.component';
 declare const window:any
 @Component({
@@ -16,15 +19,21 @@ export class TableComponent implements OnInit {
   bbmenu2:BubblemenuComponent;
   bbmenu3:BubblemenuComponent;
 
-  currphoto = '../../../assets/Despoina.jpg';
-  currphoto2= '../../../assets/Dimitra.jpg';
-  currphoto3= '../../../assets/HC.jpg';
+  user1 :User;
+  user2:User;
+  user3:User;
 
   olids:number[];
-  constructor() { 
+  constructor(private users:UsersService) { 
+    this.user1 = users.user1;
+    this.user2 = users.user2;
+    this.user3 = users.user3;
+    
+
     this.bbmenu = new BubblemenuComponent();
     this.bbmenu2 = new BubblemenuComponent();
     this.bbmenu3 = new BubblemenuComponent();
+
 
 
 
@@ -38,67 +47,97 @@ export class TableComponent implements OnInit {
   }
 
 
-openLectures(){
-  console.log("opened");
-  let lects = document.getElementsByClassName('lectures')[0] as HTMLElement;
-  if (lects.style.display === "none") {
-    lects.style.display = "block";
-  } else {
-    lects.style.display = "none";
+  openLectures(name:string){
+    console.log("opened");
+    let lecs= document.getElementsByName(name)[0] as HTMLElement;
+    let lects = lecs.getElementsByClassName('lectures')[0] as HTMLElement;
+    if (lects.style.display === "none") {
+      lects.style.display = "block";
+    } else {
+      lects.style.display = "none";
+    }
   }
-}
+  
+  chooseLecture(id:number){
+    console.log("choose" + id);
+    var imgid = 'lectureImage' + id;
+    var mydivid='mydiv' + id;
+  
 
-chooseLecture(id:number){
-  console.log("choose" + id);
-  var imgid = 'lectureImage' + id;
-  var mydivid='mydiv' + id;
-
- if(this.flagopenedlecture == false){
-    var lecimg = document.getElementById(imgid) as HTMLImageElement;
-    lecimg.src = "../../../assets/Rectangle 4.png";
-    this.flagopenedlecture = true;
+   if(this.flagopenedlecture == false){
+      var lecimg = document.getElementById(imgid) as HTMLImageElement;
+      lecimg.src = "../../../assets/Rectangle 4.png";
+      this.flagopenedlecture = true;
+      
+      
+      document.getElementById(mydivid).style.cssText='z-index: 9;background-color: #f1f1f1;text-align: center;border: 1px solid #d3d3d3;'
     
+      this.olids.push(id);
+     
+    }else{
+      this.olids.forEach(element => {
+        var elementmix = 'lectureImage' + element;
+        var mydivmix='mydiv' + element;
+        var lecimgpop = document.getElementById(elementmix) as HTMLImageElement;
+        lecimgpop.src = "../../../assets/Rectangle 6.png";
+        document.getElementById(mydivmix).style.display='none';
+  
+        this.olids.pop();
+        console.log(elementmix);
+      });
+      var lecimg = document.getElementById(imgid) as HTMLImageElement;
+      lecimg.src = "../../../assets/Rectangle 4.png";
+     
+      document.getElementById(mydivid).style.cssText='z-index: 9;background-color: #f1f1f1;text-align: center;border: 1px solid #d3d3d3;'
     
-    document.getElementById(mydivid).style.cssText='z-index: 9;background-color: #f1f1f1;text-align: center;border: 1px solid #d3d3d3;'
-  
-    this.olids.push(id);
-   
-  }else{
-    this.olids.forEach(element => {
-      var elementmix = 'lectureImage' + element;
-      var mydivmix='mydiv' + element;
-      var lecimgpop = document.getElementById(elementmix) as HTMLImageElement;
-      lecimgpop.src = "../../../assets/Rectangle 6.png";
-      document.getElementById(mydivmix).style.display='none';
-
-      this.olids.pop();
-      console.log(elementmix);
-    });
-    var lecimg = document.getElementById(imgid) as HTMLImageElement;
-    lecimg.src = "../../../assets/Rectangle 4.png";
-   
-    document.getElementById(mydivid).style.cssText='z-index: 9;background-color: #f1f1f1;text-align: center;border: 1px solid #d3d3d3;'
-  
-    this.olids.push(id);
-  
-  } 
-
-  
-}
+      this.olids.push(id);
+    
+    } 
+    // this.flagopenedlecture =false;
+    
+  }
 
   ngOnInit() {
 
-    this.bbmenu.dragElement(document.getElementById("user1"));
+    document.getElementById("slider").addEventListener('dblclick',function (){
+      console.log("double click");
+      let shelement = document.getElementsByClassName("slides-holder")[0] as HTMLElement;
+      if (shelement.style.display === "none") {
+        shelement.style.display = "flex";
+      } else {
+        shelement.style.display = "none";
+      }
+   });
 
+    this.bbmenu.dragElement(document.getElementById("user1"));
+      
+
+    let user3elem = document.getElementById('user1');
+    
+    let despobutton = user3elem.children[0].getElementsByClassName("Despoina");
+console.log(despobutton);
+  
+    //  user3elem.addEventListener('click',this.bbmenu3.openreactions);
 
    this.bbmenu2.dragElement(document.getElementById("user2"));
     //console.log(this.bbmenu);
     
     this.bbmenu3.dragElement(document.getElementById("user3"));
 
-    document.getElementsByClassName('lectures')[0].addEventListener('click',function (event){
-      event.stopPropagation();
-   });
+   let leccollect =   document.getElementsByClassName('lectures');
+   for(let i =0;i<leccollect.length;i++){
+      leccollect[i].addEventListener('click',function (event){
+        event.stopPropagation();
+     });
+    
+   }
+
+
+  
+  
+//    document.getElementById('minimenu').addEventListener('click',function (event){
+//     event.stopPropagation();
+//  });
 
     ( function() {
       'use strict';

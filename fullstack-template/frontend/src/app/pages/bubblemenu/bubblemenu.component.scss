@@ -12,7 +12,7 @@ a {
     color: inherit;
  }
  
- .menu-item,
+ #menu-item,
  .menu-open-button {
     background: #EEEEEE;
     border-radius: 100%;
@@ -60,50 +60,54 @@ a {
  }
  
  
-  .menu-item {
+
+ 
+  #menu-item {
     // transition: all 0.1s ease 0s;
+    border: none;
     background-color: #B4CDED;
     box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
     
  } 
  
- .menu-item:hover {
-    background: #EEEEEE;
-    color: #3290B1;
+ #menu-item:focus{
+   background-color: #61FF53;
  }
+
+
  
-//  .menu-item:nth-child(3) {
+//  #menu-item:nth-child(3) {
 //     -webkit-transition-duration: 180ms;
 //     transition-duration: 180ms;
 //  }
  
-//  .menu-item:nth-child(4) {
+//  #menu-item:nth-child(4) {
 //     -webkit-transition-duration: 180ms;
 //     transition-duration: 180ms;
 //  }
  
-//  .menu-item:nth-child(5) {
+//  #menu-item:nth-child(5) {
 //     -webkit-transition-duration: 180ms;
 //     transition-duration: 180ms;
 //  }
  
-//  .menu-item:nth-child(6) {
+//  #menu-item:nth-child(6) {
 //     -webkit-transition-duration: 180ms;
 //     transition-duration: 180ms;
 //  }
  
-//  .menu-item:nth-child(7) {
+//  #menu-item:nth-child(7) {
 //     -webkit-transition-duration: 180ms;
 //     transition-duration: 180ms;
 //  }
  
-//  .menu-item:nth-child(8) {
+//  #menu-item:nth-child(8) {
 //     -webkit-transition-duration: 180ms;
 //     transition-duration: 180ms;
 //  }
  
-//  .menu-item:nth-child(9) {
+//  #menu-item:nth-child(9) {
 //     -webkit-transition-duration: 180ms;
 //     transition-duration: 180ms;
 // }
@@ -134,54 +138,55 @@ a {
     transform: scale(0.8, 0.8) translate3d(0, 0, 0);
  }
  
- .menu-open ~ .menu-item {
+ .menu-open ~ #menu-item {
     // -webkit-transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
     // transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
  }
  
- .menu-open ~ .menu-item:nth-child(3) {
+ .menu-open ~ #menu-item:nth-child(3) {
     // transition-duration: 180ms;
     // -webkit-transition-duration: 180ms;
     // -webkit-transform: translate3d(0.08361px, -104.99997px, 0);
     transform: translate3d(0.08361px, -104.99997px, 0);
+    
  }
  
- .menu-open ~ .menu-item:nth-child(4) {
+ .menu-open ~ #menu-item:nth-child(4) {
     // transition-duration: 280ms;
     // -webkit-transition-duration: 280ms;
     // -webkit-transform: translate3d(90.9466px, -52.47586px, 0);
      transform: translate3d(90.9466px, -52.47586px, 0);
  }
  
- .menu-open ~ .menu-item:nth-child(5) {
+ .menu-open ~ #menu-item:nth-child(5) {
     // transition-duration: 380ms;
     // -webkit-transition-duration: 380ms;
     // -webkit-transform: translate3d(90.9466px, 52.47586px, 0);
     transform: translate3d(90.9466px, 52.47586px, 0);
  }
  
- .menu-open ~ .menu-item:nth-child(6) {
+ .menu-open ~ #menu-item:nth-child(6) {
     // transition-duration: 480ms;
     // -webkit-transition-duration: 480ms;
     // -webkit-transform: translate3d(0.08361px, 104.99997px, 0);
     transform: translate3d(0.08361px, 104.99997px, 0);
  }
  
- .menu-open ~ .menu-item:nth-child(7) {
+ .menu-open ~ #menu-item:nth-child(7) {
     // transition-duration: 580ms;
     // -webkit-transition-duration: 580ms;
     // -webkit-transform: translate3d(-90.86291px, 52.62064px, 0);
     transform: translate3d(-90.86291px, 52.62064px, 0);
  }
  
- .menu-open ~ .menu-item:nth-child(8) {
+ .menu-open ~ #menu-item:nth-child(8) {
     // transition-duration: 680ms;
     // -webkit-transition-duration: 680ms;
     // -webkit-transform: translate3d(-91.03006px, -52.33095px, 0);
     transform: translate3d(-91.03006px, -52.33095px, 0);
  }
  
- .menu-open ~ .menu-item:nth-child(9) {
+ .menu-open ~ #menu-item:nth-child(9) {
     // transition-duration: 780ms;
     // -webkit-transition-duration: 780ms;
     // -webkit-transform: translate3d(-0.25084px, -104.9997px, 0);
