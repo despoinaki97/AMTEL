@@ -17,12 +17,25 @@
     position: absolute;
     top:20%;
     left:15%;
-    // transform: rotate(95deg);
+    // transform: rotate(90deg);
 
 }
 
+.removebutt:focus{
+  background-color: #EB4848 ;
+}
 
+.removebutt{
+background-color: rgb(255,77,0,0.1); 
+}
 
+.sharebutt{
+  background-color: rgb(97,255,83,0.1); 
+}
+
+.sharebutt:focus{
+  background-color: #55CB4A;
+}
 
 #user2{
   position: absolute;
@@ -44,7 +57,30 @@
 .lecture{
   margin-bottom: 3%;
   display: flex;
+  margin-top: -20%;
 
+}
+
+.lecmenubut{
+  border-style: solid;
+   border-color: #B4CDED;
+  width:100%;
+  text-align: left;
+  font-size: 13px;
+
+}
+
+.lecmenubut:focus{
+  background-color: #B4CDED;
+}
+
+.lecmenutag{
+  border-style: solid;
+  border-color: #B4CDED;
+  border-width:2px;
+  font-size: 16px;
+  text-align: left;
+  margin-bottom: 0%;
 }
 
 #mydiv {
@@ -312,4 +348,5 @@
     line-height: 1.2;
     color:344966;
     font-size: 16px;
+    margin-top: 11%;
   }
