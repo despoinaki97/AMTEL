@@ -4,6 +4,7 @@ import { TableComponent } from './pages/table/table.component';
 import { TabletComponent } from './pages/tablet/tablet.component';
 import { SelectRoomComponent } from './pages/tablet/select-room/select-room.component';
 import { ProfileOptionsComponent } from './pages/tablet/profile-options/profile-options.component';
+import { WallComponent } from './pages/wall/wall.component';
 
 const routes: Routes = [
   { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'tablet_start' , component:TabletComponent},
   {path: 'selectRoom' , component:SelectRoomComponent},
   {path: 'profileOptions', component: ProfileOptionsComponent},
+  {path: 'wall',component:WallComponent},
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 

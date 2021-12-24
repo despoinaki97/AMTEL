@@ -9,6 +9,7 @@ import { TabletComponent } from './pages/tablet/tablet.component';
 import { SelectRoomComponent } from './pages/tablet/select-room/select-room.component';
 import { ProfileOptionsComponent } from './pages/tablet/profile-options/profile-options.component';
 import { BubblemenuComponent } from './pages/bubblemenu/bubblemenu.component';
+import { WallComponent } from './pages/wall/wall.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BubblemenuComponent } from './pages/bubblemenu/bubblemenu.component';
     TabletComponent,
     SelectRoomComponent,
     ProfileOptionsComponent,
-    BubblemenuComponent
+    BubblemenuComponent,
+    WallComponent
   ],
   imports: [
     BrowserModule,
