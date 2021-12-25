@@ -1,0 +1,51 @@
+
+    <div class="circular-slider circular-slider-1">
+        <div class="wrapper">
+          <div class="controls">
+            <div class="controls__left">
+              <div class="icon-wrapper"><i class="far fa-arrow-alt-circle-left"></i></div>
+            </div>
+            <div class="controls__right">
+              <div class="icon-wrapper"><i class="far fa-arrow-alt-circle-right"></i></div>
+            </div>
+            <!-- <div class="controls__autoplay controls__autoplay_running">
+              <div class="icon-wrapper">
+                <div class="pause"><i class="far fa-pause-circle"></i></div>
+                <div class="run"><i class="far fa-play-circle"></i></div>
+              </div>
+            </div> -->
+          </div>
+          <ul class="slides-holder" style="list-style: none; ">
+         
+            <li class="slides-holder__item" *ngFor="let week of weeks; let j = index" (click)="openLectures(j)"  style="padding: 0%;"><img src="{{week.photo}}" class="week" alt="img"/>
+              <ul class="lectures"  style=" width: 111%;margin-top: 2px;    margin-left: 16%;list-style: none; display: none; padding: 0%;" >
+                <div class="triangle-down"></div>
+  
+                <li class="lecture" *ngFor="let lecture of week.lectures; let i = index"  style=" transform: rotate(180deg);" (click)="chooseLecture(lecture.id,j)" >
+                  <p class="lectext">{{lecture.title}}</p>
+                  <img class= "{{'lectureImage'+i}}" style="width:100%; float:left; padding-top:12% ;padding-bottom: 12%;margin-right: 12px;" src="../../../assets/Rectangle 6.png"/>
+                  <div class="{{'mydiv'+i}}" style="display: none; width: 50%; float:right;border-radius: 50PX;">
+                    <div id="minimenu" style="width: 85px;border-radius: 50PX;">
+                      <div>
+                          <p class="lecmenutag">Share</p>
+                          <button class="lecmenubut">Call</button>
+                          <button class="lecmenubut">Room</button>
+                      </div>
+                      <div>
+                          <p class="lecmenutag">Device</p>
+                          <button class="lecmenubut">TV</button>
+                          <button class="lecmenubut">Wall</button>
+                      </div>
+                      <div style="display: flex;">
+                          <button class="removebutt" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="sharebutt" style="width: 50%;border: none;font-size: 10px; ">Share</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </li>
+              
+              </ul>
+            </li>  
+        </ul>
+      </div>

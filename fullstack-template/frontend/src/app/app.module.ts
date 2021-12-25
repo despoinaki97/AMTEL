@@ -10,6 +10,7 @@ import { SelectRoomComponent } from './pages/tablet/select-room/select-room.comp
 import { ProfileOptionsComponent } from './pages/tablet/profile-options/profile-options.component';
 import { BubblemenuComponent } from './pages/bubblemenu/bubblemenu.component';
 import { WallComponent } from './pages/wall/wall.component';
+import { CarouselComponent } from './pages/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { WallComponent } from './pages/wall/wall.component';
     SelectRoomComponent,
     ProfileOptionsComponent,
     BubblemenuComponent,
-    WallComponent
+    WallComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
