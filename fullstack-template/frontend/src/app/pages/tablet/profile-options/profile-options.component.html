@@ -1,10 +1,14 @@
 <div class="mainContainer">
-    <img id='profilepic' src="assets/me.jpg" alt="Avatar"> 
-    <label id="title"><b>Dimitra Ktistaki</b></label>
+    <a id="closePO" routerLink="/menu"> x </a>
+    <img id='profilepic' [src]="pickImage()" alt="Avatar"> 
+    
+    <Label id="username1" class="title" style="display: none;"> Despoina </Label>
+    <Label id="username2" class="title" style="display: none;"> Dimitra </Label>
+    <Label id="username3" class="title" style="display: none;"> Abdul </Label>
+    <Label *ngIf="pickName()"> your text </Label>
 
     <a class="profileOption" id='op1' routerLink="/selectRoom">Change room</a>
     <a class="profileOption" id='op2' href="#">My notes</a>
     <a class="profileOption" id='op3' routerLink="/tablet_start">Logout</a>
     
-   
 </div>

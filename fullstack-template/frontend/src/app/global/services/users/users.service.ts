@@ -14,10 +14,10 @@ export class UsersService {
   currphoto3= '../../../assets/HC.jpg';
   
   constructor() {
-    this.user1=new User(1,this.currphoto,"Despoina");
-    this.user2=new User(2,this.currphoto2,"Dimitra");
-    this.user3=new User(3,this.currphoto3,"Abdul");
-   }
 
+    this.user1=new User(1,this.currphoto,"Despoina","demo1",0,0);
+    this.user2=new User(2,this.currphoto2,"Dimitra","demo2",0,0);
+    this.user3=new User(3,this.currphoto3,"Abdul","demo3",0,0);
+   }
 
 }

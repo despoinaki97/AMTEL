@@ -1,10 +1,11 @@
-<div class="mainContainer">
-
+<form id="signinform" class ="mainContainer" (ngSubmit)="onSubmit($event)">
     <label id="title"><b>AMTEL</b></label>
-  
+
+      <label class="errormes" id="wpass" style="display: none;">Wrong password!</label>
+      <label class="errormes" id="inex" style="display: none;">This user does not exist!</label>
       <input type="text" placeholder="Username" name="uname" required>
       <input type="password" placeholder="Password" name="psw" required>
-     
+      
       <span class="psw" id="forgotpas">Forgot <a href="#">password?</a></span>
-      <a routerLink="/selectRoom"><button type="button" class="btn btn-secondary">SIGN IN</button></a>
-</div>
+      <button type="submit" class="btn btn-secondary" >SIGN IN</button>
+</form>

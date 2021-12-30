@@ -13,7 +13,7 @@
     width: 50%;
 }
 
-#title {
+.title {
     margin-top: 4%;
     margin-bottom: 15%;
     color: #0D1821;
@@ -34,4 +34,54 @@
 }
 
 .profileOption:hover {color:#AA8585;}
-  
+
+#closePO {
+    font-size: 520%;
+    text-align: right;
+    margin-top: 2%;
+    margin-right: 5%;
+    color: black;
+    display: block;
+}
+
+@media screen and (max-width: 1000px) {
+    .title{
+        font-size: 120%;
+    }
+    .profileOption{
+        font-size: 130%;
+    }
+    #closePO {
+        font-size: 200%;
+    }
+}
+@media screen and (max-width: 770px) and (min-width: 750px) {
+    .title{
+        font-size: 200%;
+    }
+    .profileOption{
+        font-size: 210%;
+    }
+    #closePO {
+        font-size: 300%;
+    }
+    #profilepic {
+        width: 45%;
+    }
+}
+@media screen and (min-width: 1020px) and (max-width: 1025px) {
+    .title{
+        font-size: 240%;
+    }
+    .profileOption{
+        font-size: 250%;
+    }
+    #closePO {
+        font-size: 320%;
+    }
+    #profilepic {
+        width: 45%;
+    }
+}
+
+
