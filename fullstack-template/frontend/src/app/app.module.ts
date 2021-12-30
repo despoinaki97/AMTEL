@@ -9,6 +9,8 @@ import { TabletComponent } from './pages/tablet/tablet.component';
 import { SelectRoomComponent } from './pages/tablet/select-room/select-room.component';
 import { ProfileOptionsComponent } from './pages/tablet/profile-options/profile-options.component';
 import { BubblemenuComponent } from './pages/bubblemenu/bubblemenu.component';
+import { MenuComponent } from './pages/tablet/menu/menu.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { BubblemenuComponent } from './pages/bubblemenu/bubblemenu.component';
     TabletComponent,
     SelectRoomComponent,
     ProfileOptionsComponent,
-    BubblemenuComponent
+    BubblemenuComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
