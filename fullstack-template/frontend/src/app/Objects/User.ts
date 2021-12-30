@@ -4,7 +4,7 @@ export class User {
       public id:number,
       public photo: string,
       public name:string
-        
+      // public presenting: boolean
       ) { }
 
     }

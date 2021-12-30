@@ -11,6 +11,8 @@ import { ProfileOptionsComponent } from './pages/tablet/profile-options/profile-
 import { BubblemenuComponent } from './pages/bubblemenu/bubblemenu.component';
 import { WallComponent } from './pages/wall/wall.component';
 import { CarouselComponent } from './pages/carousel/carousel.component';
+import { WallSharingComponent } from './pages/wall-sharing/wall-sharing.component';
+import { TvEmptyComponent } from './pages/tv-empty/tv-empty.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { CarouselComponent } from './pages/carousel/carousel.component';
     ProfileOptionsComponent,
     BubblemenuComponent,
     WallComponent,
-    CarouselComponent
+    CarouselComponent,
+    WallSharingComponent,
+    TvEmptyComponent
   ],
   imports: [
     BrowserModule,

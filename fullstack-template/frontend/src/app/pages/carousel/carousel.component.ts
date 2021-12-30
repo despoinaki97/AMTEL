@@ -26,32 +26,45 @@ export class CarouselComponent implements OnInit {
       {id:2,title:"Interface Design for Mobile and Wearable Devices, Automoblies and the New Media"}
     ]
     this.weeks=[
-      {lectures:this.lectureslist,photo:"../../../assets/Group 40.png"},
-      {lectures:this.lectureslist,photo:"../../../assets/Group 41.png"},
-      {lectures:this.lectureslist,photo:"../../../assets/Group 43.png"},
-      {lectures:this.lectureslist,photo:"../../../assets/Group 44.png"},
-      {lectures:this.lectureslist,photo:"../../../assets/Group 45.png"},
-      {lectures:this.lectureslist,photo:"../../../assets/Group 46.png"},
-      {lectures:this.lectureslist,photo:"../../../assets/Group 47.png"},
-      {lectures:this.lectureslist,photo:"../../../assets/Group 48.png"},
-      {lectures:this.lectureslist,photo:"../../../assets/Group 49.png"},
-      {lectures:this.lectureslist,photo:"../../../assets/Group 50.png"},
-      {lectures:this.lectureslist,photo:"../../../assets/Group 51.png"}
+      {lectures:this.lectureslist,photo:"../../../assets/week1.png"},
+      {lectures:this.lectureslist,photo:"../../../assets/week2.png"},
+      {lectures:this.lectureslist,photo:"../../../assets/week3.png"},
+      {lectures:this.lectureslist,photo:"../../../assets/week4.png"},
+      {lectures:this.lectureslist,photo:"../../../assets/week5.png"},
+      {lectures:this.lectureslist,photo:"../../../assets/week6.png"},
+      {lectures:this.lectureslist,photo:"../../../assets/week7.png"},
+      {lectures:this.lectureslist,photo:"../../../assets/week8.png"},
+      {lectures:this.lectureslist,photo:"../../../assets/week9.png"},
+      {lectures:this.lectureslist,photo:"../../../assets/week10.png"},
+      {lectures:this.lectureslist,photo:"../../../assets/week11.png"}
+
     ]
+
+    // this.weeks.forEach(element => {
+    //   console.log(element.lectures, element.photo);
+    // });
 
   }
 
 
 
   openLectures(id:number){
-    console.log("opened");
+    // console.log("opened" + id);
     let lects = document.getElementsByClassName('lectures')[id] as HTMLElement;
     if (lects.style.display === "none") {
       lects.style.display = "block";
+      console.log("opened" + id);
     } else {
       lects.style.display = "none";
+      console.log("closed" + id);
     }
   }
+
+
+  // chooseLecture(id:number,parentid:number){
+  //   console.log(id,parentid);
+
+  // }
   
   chooseLecture(id:number,parentid:number){
     // if (parentid!=this.globalparentid){
@@ -68,9 +81,10 @@ export class CarouselComponent implements OnInit {
       var lecimg = parent.getElementsByClassName(imgid)[0] as HTMLImageElement;
       lecimg.src = "../../../assets/Rectangle 4.png";
       this.flagopenedlecture = true;
+      var divid = parent.getElementsByClassName(mydivid)[0] as HTMLElement;
+      divid.style.cssText='background-color: #f1f1f1;text-align: center;border: 1px solid #d3d3d3;'; 
       
-      
-      (parent.getElementsByClassName(mydivid)[0] as HTMLElement).style.cssText='z-index: 9;background-color: #f1f1f1;text-align: center;border: 1px solid #d3d3d3;'
+      // (parent.getElementsByClassName(mydivid)[0] as HTMLElement).style.cssText='background-color: #f1f1f1;text-align: center;border: 1px solid #d3d3d3;'
     
       this.olids.push(id);
      
@@ -80,7 +94,8 @@ export class CarouselComponent implements OnInit {
         var mydivmix='mydiv' + element;
         var lecimgpop = parent.getElementsByClassName(elementmix)[0] as HTMLImageElement;
         lecimgpop.src = "../../../assets/Rectangle 6.png";
-        (parent.getElementsByClassName(mydivmix)[0] as HTMLElement).style.display='none';
+        let mdmix = parent.getElementsByClassName(mydivmix)[0] as HTMLElement
+        mdmix.style.display='none';
 
         this.olids.pop();
         console.log(elementmix);
@@ -88,12 +103,13 @@ export class CarouselComponent implements OnInit {
       var lecimg = parent.getElementsByClassName(imgid)[0] as HTMLImageElement;
       lecimg.src = "../../../assets/Rectangle 4.png";
      
-      (parent.getElementsByClassName(mydivid)[0] as HTMLElement).style.cssText='z-index: 9;background-color: #f1f1f1;text-align: center;border: 1px solid #d3d3d3;'
-    
+      var divid = parent.getElementsByClassName(mydivid)[0] as HTMLElement;
+      divid.style.cssText='background-color: #f1f1f1;text-align: center;border: 1px solid #d3d3d3;'; 
+      
       this.olids.push(id);
     
     } 
-    // 
+    
     
   }
 
