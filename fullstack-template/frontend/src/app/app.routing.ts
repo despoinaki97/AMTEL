@@ -5,6 +5,9 @@ import { TabletComponent } from './pages/tablet/tablet.component';
 import { SelectRoomComponent } from './pages/tablet/select-room/select-room.component';
 import { ProfileOptionsComponent } from './pages/tablet/profile-options/profile-options.component';
 import { MenuComponent } from './pages/tablet/menu/menu.component';
+import { WallComponent } from './pages/wall/wall.component';
+import { WallSharingComponent } from './pages/wall-sharing/wall-sharing.component';
+import { TvEmptyComponent } from './pages/tv-empty/tv-empty.component';
 
 const routes: Routes = [
   { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },
@@ -15,6 +18,9 @@ const routes: Routes = [
   {path: 'selectRoom' , component:SelectRoomComponent},
   {path: 'profileOptions', component: ProfileOptionsComponent},
   {path: 'menu', component:MenuComponent},
+  {path: 'wall',component:WallComponent},
+  {path: 'wall_sharing',component:WallSharingComponent},
+  {path: 'tv_empty',component:TvEmptyComponent},
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 

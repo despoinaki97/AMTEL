@@ -11,6 +11,10 @@ import { ProfileOptionsComponent } from './pages/tablet/profile-options/profile-
 import { BubblemenuComponent } from './pages/bubblemenu/bubblemenu.component';
 import { MenuComponent } from './pages/tablet/menu/menu.component';
 import { FormsModule } from '@angular/forms';
+import { WallComponent } from './pages/wall/wall.component';
+import { CarouselComponent } from './pages/carousel/carousel.component';
+import { WallSharingComponent } from './pages/wall-sharing/wall-sharing.component';
+import { TvEmptyComponent } from './pages/tv-empty/tv-empty.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { FormsModule } from '@angular/forms';
     SelectRoomComponent,
     ProfileOptionsComponent,
     BubblemenuComponent,
-    MenuComponent
+    MenuComponent,
+    WallComponent,
+    CarouselComponent,
+    WallSharingComponent,
+    TvEmptyComponent
   ],
   imports: [
     BrowserModule,
