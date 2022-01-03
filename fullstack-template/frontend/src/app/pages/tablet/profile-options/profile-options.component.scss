@@ -22,6 +22,18 @@
     display: block;
 }
 
+.coursetitle {
+    margin-top: -4%;
+    margin-bottom: -5%;
+    color: green;
+    font-size: 300%;
+    font-weight: bold;
+    margin-left: -50%;
+    font-family: 'Roboto', sans-serif;
+    display: block;
+    text-decoration: underline;
+}
+
 .profileOption {
     color: black;
     display: block;
@@ -54,6 +66,10 @@
     #closePO {
         font-size: 200%;
     }
+    .coursetitle {
+        font-size: 100%;
+        margin-left: -50%;
+    }
 }
 @media screen and (max-width: 770px) and (min-width: 750px) {
     .title{
@@ -68,6 +84,10 @@
     #profilepic {
         width: 45%;
     }
+    .coursetitle {
+        font-size: 250%;
+        margin-left: -50%;
+    }
 }
 @media screen and (min-width: 1020px) and (max-width: 1025px) {
     .title{
@@ -81,6 +101,10 @@
     }
     #profilepic {
         width: 45%;
+    }
+    .coursetitle {
+        font-size: 300%;
+        margin-left: -55%;
     }
 }
 

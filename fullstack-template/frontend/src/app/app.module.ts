@@ -15,6 +15,8 @@ import { WallComponent } from './pages/wall/wall.component';
 import { CarouselComponent } from './pages/carousel/carousel.component';
 import { WallSharingComponent } from './pages/wall-sharing/wall-sharing.component';
 import { TvEmptyComponent } from './pages/tv-empty/tv-empty.component';
+import { NotesComponent } from './pages/tablet/notes/notes.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { TvEmptyComponent } from './pages/tv-empty/tv-empty.component';
     WallComponent,
     CarouselComponent,
     WallSharingComponent,
-    TvEmptyComponent
+    TvEmptyComponent,
+    NotesComponent
+
   ],
   imports: [
     BrowserModule,

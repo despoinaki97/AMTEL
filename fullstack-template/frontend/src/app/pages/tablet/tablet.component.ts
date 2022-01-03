@@ -35,9 +35,7 @@ export class TabletComponent implements OnInit {
     if (event.target.uname.value == this.user1.name) {
       if(event.target.psw.value == this.user1.password) {
         this.users.user1.sessionCounter = this.users.user1.sessionCounter + 1;
-        this.users.user2.sessionCounter = 0;
-        this.users.user3.sessionCounter = 0;
-        console.log("go to selectRoom. sessioncounter:", this.users.user1.sessionCounter)
+        console.log("go to selectRoom.")
         this.router.navigate(['/selectRoom']);
       }
       else {
@@ -48,9 +46,7 @@ export class TabletComponent implements OnInit {
     else if (event.target.uname.value == this.user2.name) {
       if(event.target.psw.value == this.user2.password) {
         this.users.user2.sessionCounter = this.users.user2.sessionCounter + 1;
-        this.users.user1.sessionCounter = 0;
-        this.users.user3.sessionCounter = 0;
-        console.log("go to selectRoom. sessioncounter:", this.users.user2.sessionCounter)
+        console.log("go to selectRoom. ")
         this.router.navigate(['/selectRoom']);
       }
       else {
@@ -61,9 +57,7 @@ export class TabletComponent implements OnInit {
     else if (event.target.uname.value == this.user3.name) {
       if(event.target.psw.value == this.user3.password) {
         this.users.user3.sessionCounter = this.users.user3.sessionCounter + 1;
-        this.users.user2.sessionCounter = 0;
-        this.users.user1.sessionCounter = 0;
-        console.log("go to selectRoom. sessioncounter:", this.users.user3.sessionCounter)
+        console.log("go to selectRoom.")
         this.router.navigate(['/selectRoom']);
       }
       else {
@@ -75,6 +69,8 @@ export class TabletComponent implements OnInit {
       console.log("This user does not exist!")
       inexuser.style.display = "block";
     }
+    console.log("sessioncounter:", this.users.user1.sessionCounter, 
+    this.users.user2.sessionCounter, this.users.user3.sessionCounter)
     return event.target.uname.value;
   }
 

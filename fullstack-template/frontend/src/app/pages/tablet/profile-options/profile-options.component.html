@@ -1,14 +1,13 @@
-<div class="mainContainer">
-    <a id="closePO" routerLink="/menu"> x </a>
-    <img id='profilepic' [src]="pickImage()" alt="Avatar"> 
+<div id="po" class="mainContainer">
+    <ami-fullstack-notes id="notes" style="display: none;"></ami-fullstack-notes>
+    <a id="closePO" (click)="closeProfileOptions()"> x </a>
     
-    <Label id="username1" class="title" style="display: none;"> Despoina </Label>
-    <Label id="username2" class="title" style="display: none;"> Dimitra </Label>
-    <Label id="username3" class="title" style="display: none;"> Abdul </Label>
-    <Label *ngIf="pickName()"> your text </Label>
+    <Label id="hy469" class="coursetitle"> {{connectedUser.course}} </Label>
+    <img id='profilepic' [src]="pickImage()" alt="Avatar"> 
+    <Label id="username1" class="title"> {{connectedUser.name}} </Label>
 
     <a class="profileOption" id='op1' routerLink="/selectRoom">Change room</a>
-    <a class="profileOption" id='op2' href="#">My notes</a>
-    <a class="profileOption" id='op3' routerLink="/tablet_start">Logout</a>
+    <a class="profileOption" id='op2' (click)="openNotes()">My notes</a>
+    <a class="profileOption" id='op3' routerLink="/tablet_start" (click) = "logout()">Logout</a>
     
 </div>

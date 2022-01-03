@@ -10,38 +10,18 @@ import {Router} from '@angular/router';
 })
 export class ProfileOptionsComponent implements OnInit {
 
-  constructor(private users:UsersService, private router: Router) { }
+  connectedUser :User;
 
+  constructor(private users:UsersService) { 
+    if(this.users.user1.sessionCounter > 0) this.connectedUser = users.user1;
+    else if(this.users.user2.sessionCounter > 0) this.connectedUser = users.user2;
+    else if(this.users.user3.sessionCounter > 0) this.connectedUser = users.user3;
+  }
+ 
   ngOnInit(): void {
   }
 
-  pickName() {
-    console.log("trying to pick name")
-
-    let username1 = document.getElementById("username1") as HTMLElement;
-    let username2 = document.getElementById("username2") as HTMLElement;
-    let username3 = document.getElementById("username3") as HTMLElement;
-
-    if(this.users.user1.sessionCounter > 0) {
-      username1.style.display = "block";
-      username2.style.display = "none";
-      username3.style.display = "none";
-    }
-    else if(this.users.user2.sessionCounter > 0) {
-      username1.style.display = "none";
-      username2.style.display = "block";
-      username3.style.display = "none";
-    }
-    else if(this.users.user3.sessionCounter > 0) {
-      username1.style.display = "none";
-      username2.style.display = "none";
-      username3.style.display = "block";
-    }
-
-  }
-
   pickImage() {
-    console.log("trying to pick image")
 
     if(this.users.user1.sessionCounter > 0) return this.users.user1.photo;
     else if(this.users.user2.sessionCounter > 0) return this.users.user2.photo;
@@ -50,6 +30,33 @@ export class ProfileOptionsComponent implements OnInit {
     return;
   }
 
-  
+
+  closeProfileOptions() {
+    let profileOptions = document.getElementById("po") as HTMLElement;
+    profileOptions.style.display = "none";
+  }
+
+  logout() {
+
+    if(this.users.user1.sessionCounter > 0) {
+      this.users.user1.course = 0;
+      this.users.user1.sessionCounter = 0;
+    }
+    else if(this.users.user2.sessionCounter > 0) {
+      this.users.user2.course = 0;
+      this.users.user2.sessionCounter = 0;
+    }
+    else if(this.users.user3.sessionCounter > 0) {
+      this.users.user3.course = 0;
+      this.users.user3.sessionCounter = 0;
+    }
+    
+  }
+
+  openNotes() {
+    console.log("Open notes");
+    let notes = document.getElementById("notes") as HTMLElement;
+    notes.style.display = "block";
+  }
 
 }
