@@ -37,6 +37,11 @@ export class MenuComponent implements OnInit {
     notesButton.style.backgroundColor = "white";
   }
   
+  openProfileOptions() {
+    let profileOp = document.getElementById("po") as HTMLElement;
+    profileOp.style.display = "block";
+  }
+
   ngOnInit() {
   }
 

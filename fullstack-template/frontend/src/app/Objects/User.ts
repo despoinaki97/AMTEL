@@ -6,7 +6,8 @@ export class User {
       public name:string,
       public password:string,
       public course: number,  
-      public sessionCounter: number
+      public sessionCounter: number,
+      public notes: string[]
       ) { }
 
     }

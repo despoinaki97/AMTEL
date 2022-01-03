@@ -11,6 +11,7 @@ import { ProfileOptionsComponent } from './pages/tablet/profile-options/profile-
 import { BubblemenuComponent } from './pages/bubblemenu/bubblemenu.component';
 import { MenuComponent } from './pages/tablet/menu/menu.component';
 import { FormsModule } from '@angular/forms';
+import { NotesComponent } from './pages/tablet/notes/notes.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     SelectRoomComponent,
     ProfileOptionsComponent,
     BubblemenuComponent,
-    MenuComponent
+    MenuComponent,
+    NotesComponent
   ],
   imports: [
     BrowserModule,

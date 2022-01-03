@@ -1,0 +1,25 @@
+<div id="notes" class="mainContainer">
+    <img id="closeNotes" (click)="closeNotes()" src="../../../assets/arrow.png"  alt="Avatar"> 
+
+    <div class=noteslist>
+        <Label id="MyNotes"> My Notes </Label>
+        <a class="noteitem">{{connectedUser.notes[0]}}</a>
+        <hr class="paula">  
+        <a class="noteitem" (click)="openNote2()">{{connectedUser.notes[1]}}</a>
+        <hr class="paula">  
+        <a class="noteitem">{{connectedUser.notes[2]}}</a>
+        <hr class="paula">  
+        <a class="noteitem">{{connectedUser.notes[3]}}</a>
+        <hr class="paula">  
+        <a class="noteitem">{{connectedUser.notes[4]}}</a>
+        <hr class="paula">  
+        <a class="noteitem">{{connectedUser.notes[5]}}</a>
+        <hr class="paula">  
+    </div>
+</div>
+
+<div id="note2" style="display: none;" class="noteContainer">
+    <img id="closeNote2" (click)="closeNote2()" src="../../../assets/arrow.png"  alt="Avatar"> 
+    <img id="content" src="../../../assets/note2.png"  alt="Avatar">
+    <button class="btn btn-secondary" (click)="openOnTable()">Send to table</button>
+</div>
