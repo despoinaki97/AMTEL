@@ -9,11 +9,20 @@ import { UsersService } from 'src/app/global/services/users/users.service';
 })
 export class TvEmptyComponent implements OnInit {
   course:string;
-  constructor(private users:UsersService,private Socket:SocketsService) { }
+  public socketEvents:{event: string,message:any}[];
+
+  constructor(private users:UsersService,private Socket:SocketsService) { 
+    this.socketEvents=[];
+
+  }
 
   ngOnInit() {
-        
-       this.course="HY469 Room"
+    this.Socket.syncMessages("connecteduser").subscribe(msg=>{
+      this.socketEvents.push(msg);
+      console.log(msg);
+        this.course="HY-" + msg.message.course+ " Room";
+        console.log(this.course);
+    })
   }
 
   // public userconnected(user,course){

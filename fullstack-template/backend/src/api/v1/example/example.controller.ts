@@ -16,6 +16,7 @@ export class ExampleController {
 
         router
             .post('/connecteduser', this.connecteduser)
+            .post('/sharecontent', this.sharecontent)
             .get('/getconnecteduser',this.connecteduser);
         return router;
     }
@@ -29,6 +30,19 @@ export class ExampleController {
      * Broadcasts a received message to all connected clients
      */
     public connecteduser(req: Request, res: Response) {
+        const message: string = req.body.message;
+        const event: string = req.body.event;
+
+        logger.debug(req.body.event);
+        const socketService = DIContainer.get(SocketsService);
+        socketService.broadcast(event, message);
+
+        res.json({ message: message });
+
+    }
+
+
+    public sharecontent(req: Request, res: Response) {
         const message: string = req.body.message;
         const event: string = req.body.event;
 

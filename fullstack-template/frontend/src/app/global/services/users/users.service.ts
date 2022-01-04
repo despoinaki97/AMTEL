@@ -37,6 +37,19 @@ export class UsersService {
 
   }
 
+  public sharecontent(place,device){
+    console.log("mpaineis?");
+    return this.http.post(`${this.hostURI}/api/example/sharecontent`,
+    {
+      message:{
+        place:place,
+        device:device
+      },
+      event:"sharecontent"
+    })
+
+  }
+
 
   // public getconnecteduser(){
   //   return this.http.get(`${this.hostURI}/api/example/getconnecteduser`);

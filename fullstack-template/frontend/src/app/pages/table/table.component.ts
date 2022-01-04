@@ -58,6 +58,7 @@ export class TableComponent implements OnInit {
 
     this.dragElement(document.getElementById("mynote"));
 
+
     this.socketservice.syncMessages("connecteduser").subscribe(msg=>{
       this.socketEvents.push(msg);
       console.log(msg);
