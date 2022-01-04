@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { transform } from 'lodash';
 import { on } from 'process';
 import { $ } from 'protractor';
+import { SocketsService } from 'src/app/global/services';
 import { UsersService } from 'src/app/global/services/users/users.service';
 import {Lecture} from 'src/app/Objects/Lecture'
 import { User } from 'src/app/Objects/User';
@@ -22,8 +23,10 @@ export class TableComponent implements OnInit {
   user1 :User;
   user2:User;
   user3:User;
+  public socketEvents:{event: string,message:any}[];
 
-  constructor(private users:UsersService) { 
+  constructor(private users:UsersService,private socketservice:SocketsService) { 
+    this.socketEvents=[];
     this.user1 = users.user1;
     this.user2 = users.user2;
     this.user3 = users.user3;
@@ -54,6 +57,26 @@ export class TableComponent implements OnInit {
   ngOnInit() {
 
     this.dragElement(document.getElementById("mynote"));
+
+
+    this.socketservice.syncMessages("connecteduser").subscribe(msg=>{
+      this.socketEvents.push(msg);
+      console.log(msg);
+      if(msg.message.userid == 1)
+      {
+        document.getElementById("user1").style.display="block";
+        console.log(1);
+      }
+      if (msg.message.userid == 2){
+        document.getElementById("user2").style.display="block";
+        console.log(2);
+      }
+      if (msg.message.userid == 3){
+        document.getElementById("user3").style.display="block";
+
+        console.log(3);
+      }
+    })
 
 
     document.getElementById("slider").addEventListener('dblclick',function (){
