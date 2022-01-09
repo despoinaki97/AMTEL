@@ -7,11 +7,12 @@
 
 <div id="mynote" style="display: none;">
   <button id="menu-item" (click)="closenote()"> <img class="controlbut" src="../../../assets/close (1) 1.png"/></button>
-  <div id="mynoteheader">
-    <button id="menu-item2" (click)="sharenote()"> <img class="controlbut" style="width: 50%;margin-bottom: 15%;" src="../../../assets/download_note.png"/></button>
+  <div id="mynoteheader" style="display: flex;">
+    <img id="noteImg" src="../../../assets/note2.png" />
 
-    <img class="noteImg" src="../../../assets/note.png" />
-    <div class="users">
+    <div class="users" style="float:right;">
+      <button id="menu-item2" (click)="sharenote()"> <img class="controlbut" style="width: 50%;margin-bottom: 15%;" src="../../../assets/download_note.png"/></button>
+
       <img class="user1photo" src="{{user1.photo}}"/>
       <img class="user2photo" src="{{user2.photo}}"/>
       <img class="user3photo" src="{{user3.photo}}"/>

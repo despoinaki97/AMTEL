@@ -46,11 +46,26 @@ export class TableComponent implements OnInit {
 
 
   sharenote(){
-    let shelement = document.getElementsByClassName("users")[0] as HTMLElement;
+    let shelement = document.getElementsByClassName("user1photo")[0] as HTMLElement;
+    let shelement2 = document.getElementsByClassName("user2photo")[0] as HTMLElement;
+    let shelement3 = document.getElementsByClassName("user3photo")[0] as HTMLElement;
+
     if (shelement.style.display === "none") {
       shelement.style.display = "block";
     } else {
       shelement.style.display = "none";
+    }
+
+    if (shelement2.style.display === "none") {
+      shelement2.style.display = "block";
+    } else {
+      shelement2.style.display = "none";
+    }
+
+    if (shelement3.style.display === "none") {
+      shelement3.style.display = "block";
+    } else {
+      shelement3.style.display = "none";
     }
   }
 
@@ -76,6 +91,17 @@ export class TableComponent implements OnInit {
 
         console.log(3);
       }
+    })
+
+
+    this.socketservice.syncMessages("opennoteontable").subscribe(msg=>{
+      this.socketEvents.push(msg);
+      console.log(msg);
+      let mynote = document.getElementById("mynote");
+      mynote.style.display = "block";
+      let noteimg = document.getElementById("noteImg") as HTMLImageElement;
+      noteimg.src = msg.message.note;
+   
     })
 
 

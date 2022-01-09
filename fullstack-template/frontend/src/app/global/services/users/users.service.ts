@@ -40,6 +40,19 @@ export class UsersService {
 
   }
 
+  public closecontent(place,device){
+    console.log("mpaineis?");
+    return this.http.post(`${this.hostURI}/api/example/closecontent`,
+    {
+      message:{
+        place:place,
+        device:device
+      },
+      event:"closecontent"
+    })
+
+  }
+
   public sharecontent(place,device){
     console.log("mpaineis?");
     return this.http.post(`${this.hostURI}/api/example/sharecontent`,
@@ -53,6 +66,17 @@ export class UsersService {
 
   }
 
+
+  public openontable(connecteduser){
+    return this.http.post(`${this.hostURI}/api/example/opennoteontable`,
+    {
+      message:{
+        note:"../../../assets/note2.png",
+        user:connecteduser
+      },
+      event:"opennoteontable"
+    })
+  }
 
   // public getconnecteduser(){
   //   return this.http.get(`${this.hostURI}/api/example/getconnecteduser`);

@@ -9,13 +9,24 @@
 }
 
 
-.removebutt:focus{
-  background-color: #EB4848 ;
+
+
+.removedisabled {
+  background-color: rgba(255, 0, 0, 0.1);
 }
 
-.removebutt{
-background-color: rgb(255,77,0,0.1); 
+.removeenabled {
+  background-color: #EB4848;
 }
+
+.sharedisabled {
+  background-color: rgb(97,255,83,0.1);
+}
+
+.shareenabled {
+  background-color: #55CB4A;
+}
+
 
 .sharebutt{
   background-color: rgb(97,255,83,0.1); 
