@@ -28,7 +28,7 @@
     color: green;
     font-size: 300%;
     font-weight: bold;
-    margin-left: -50%;
+    margin-left: -58%;
     font-family: 'Roboto', sans-serif;
     display: block;
     text-decoration: underline;
@@ -108,4 +108,23 @@
     }
 }
 
+@media screen and (min-width: 358px) and (max-width: 362px) {
+    .coursetitle {
+        font-size: 120%;
+        margin-left: -60%;
+    }
+}
 
+@media screen and (min-width: 410px) and (max-width: 412px) {
+    .coursetitle {
+        font-size: 150%;
+        margin-left: -65%;
+    }
+}
+
+@media screen and (min-width: 530px) and (max-width: 550px){
+    .coursetitle {
+        font-size: 130%;
+        margin-left: -65%;
+    }
+}
