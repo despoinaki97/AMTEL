@@ -39,6 +39,7 @@
 #content {
     margin-top: 7%;
     margin-left: 1%;
+    display: block;
 }
 
 .btn-secondary {
@@ -106,5 +107,76 @@
         height: 6%;
         margin-bottom: 1%;
         margin-right: -15%;
+    }
+}
+@media screen and (min-width: 760px) and (max-width: 780px){
+    #content {
+        width: 80%;
+        height: 70%;
+    }
+    #MyNotes {
+        font-size: 220%;
+        margin-left: -45%;
+    }
+    .noteitem {
+        font-size: 220%;
+        margin-left: 15%;
+        margin-bottom: 5%;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 400px) {
+    #content {
+        width: 85%;
+        height: 75%;
+    }
+    #MyNotes {
+        margin-left: -39%;
+    }
+}
+
+@media screen and (min-width: 1020px) and (max-width: 1025px){
+    #content {
+        width: 80%;
+        height: 70%;
+    }
+    #MyNotes {
+        font-size: 200%;
+        margin-left: -52%;
+    }
+    .noteitem {
+        font-size: 200%;
+        margin-left: 15%;
+        margin-bottom: 5%;
+    }
+}
+
+@media screen and (min-width: 530px) and (max-width: 550px){
+    #MyNotes {
+        font-size: 170%;
+        margin-left: -40%;
+    }
+    #content {
+        width: 85%;
+        height: 70%;
+    }
+}
+
+@media screen and (min-width: 270px) and (max-width: 290px){
+    #MyNotes {
+        font-size: 120%;
+        margin-left: -32%;
+    }
+    .noteitem {
+        font-size: 120%;
+        margin-left: 15%;
+        margin-bottom: 5%;
+    }
+    #content {
+        width: 90%;
+        height: 70%;
+    }
+    .btn-secondary {
+        width: 70%;
     }
 }
