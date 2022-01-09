@@ -85,7 +85,7 @@
                           <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
                       </div>
                       <div style="display: flex;" class="minimenuchild">
-                          <button class="removebutt" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
                           <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
                       </div>
                       
@@ -116,7 +116,7 @@
                           <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
                       </div>
                       <div style="display: flex;" class="minimenuchild">
-                          <button class="removebutt" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
                           <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
                       </div>
                       
@@ -147,7 +147,7 @@
                           <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
                       </div>
                       <div style="display: flex;" class="minimenuchild">
-                          <button class="removebutt" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
                           <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
                       </div>
                       
@@ -178,7 +178,7 @@
                           <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
                       </div>
                       <div style="display: flex;" class="minimenuchild">
-                          <button class="removebutt" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
                           <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
                       </div>
                       
@@ -209,7 +209,7 @@
                           <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
                       </div>
                       <div style="display: flex;" class="minimenuchild">
-                          <button class="removebutt" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
                           <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
                       </div>
                       
@@ -240,7 +240,7 @@
                           <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
                       </div>
                       <div style="display: flex;" class="minimenuchild">
-                          <button class="removebutt" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
                           <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
                       </div>
                       
@@ -271,7 +271,7 @@
                           <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
                       </div>
                       <div style="display: flex;" class="minimenuchild">
-                          <button class="removebutt" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
                           <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
                       </div>
                       
@@ -302,9 +302,9 @@
                           <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
                       </div>
                       <div style="display: flex;" class="minimenuchild">
-                          <button class="removebutt" style="width: 50%;border: none;font-size: 10px;">Remove</button>
-                          <button class="sharebutt"   (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
-                      </div>
+                        <button [ngClass]="{'removedisabled' : toggle, 'removeenabled': !toggle}" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                        <button [ngClass]="{'sharedisabled' : toggle1, 'shareenabled': !toggle1}" (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
+                    </div>
                       
                     </div>
                   </div>
@@ -333,7 +333,7 @@
                           <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
                       </div>
                       <div style="display: flex;" class="minimenuchild">
-                          <button class="removebutt" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
                           <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
                       </div>
                       
@@ -364,7 +364,7 @@
                           <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
                       </div>
                       <div style="display: flex;" class="minimenuchild">
-                          <button class="removebutt" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
                           <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
                       </div>
                       
@@ -386,7 +386,7 @@
                     <div id="minimenu" style="width: 85px;border-radius: 50PX;">
                       <div class="minimenuchild">
                           <p class="lecmenutag">Share</p>
-                          <button type="radio" id="Call" name="place" class="lecmenubut" (click)="chooseshare('Call')">Call</button>
+                          <button type="radio" id="Call" name="place" class="lecmenubut"  (click)="chooseshare('Call')">Call</button>
                           <button type="radio" id="Room" name="place" class="lecmenubut" (click)="chooseshare('Room')">Room</button>
                       </div>
                       <div class="minimenuchild">
@@ -395,9 +395,9 @@
                           <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
                       </div>
                       <div style="display: flex;" class="minimenuchild">
-                          <button class="removebutt" style="width: 50%;border: none;font-size: 10px;">Remove</button>
-                          <button class="sharebutt" (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
-                      </div>
+                        <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                        <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
+                    </div>
                       
                     </div>
                   </div>

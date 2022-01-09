@@ -11,6 +11,10 @@ declare const window:any
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
+  toggle = true;
+  status = 'Enable'; 
+  toggle1 = true;
+  status1 = 'Enable'; 
   sharplace:any;
   sharedevice:any;
   lectureslist:Lecture[];
@@ -50,6 +54,9 @@ export class CarouselComponent implements OnInit {
     // });
 
   }
+
+
+
 
 
 
@@ -124,8 +131,6 @@ export class CarouselComponent implements OnInit {
 
   chooseshare(share:string){
     console.log(share);
-     var sharediv = document.getElementById(share);
-     sharediv.style.backgroundColor='red';
     this.shareplace=share;
   }
 
@@ -135,8 +140,21 @@ export class CarouselComponent implements OnInit {
 
   }
 
+  closelecture(){
+     this.toggle = !this.toggle;
+    this.status = this.toggle ? 'Enable' : 'Disable';
+    if(this.sharedevice!=null && this.shareplace!=null){
+        console.log('close share');
+        this.users.closecontent(this.shareplace,this.sharedevice).subscribe();
+      
+    }
+
+
+  }
 
   sharelecture(){
+    this.toggle1 = !this.toggle1;
+    this.status1 = this.toggle1 ? 'Enable' : 'Disable';
     if(this.sharedevice!=null && this.shareplace!=null){
         console.log('ready to share');
         this.users.sharecontent(this.shareplace,this.sharedevice).subscribe();

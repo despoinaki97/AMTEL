@@ -17,9 +17,15 @@ export class WallComponent implements OnInit {
     this.socketservice.syncMessages("sharecontent").subscribe(msg=>{
       this.socketEvents.push(msg);
       console.log(msg);
-      this.router.navigate(['/wall_sharing']);
+      if(msg.message.device=="Wall"){
+        this.router.navigate(['/wall_sharing']);
+
+      }
 
     })
+
+
+
   }
 
 }

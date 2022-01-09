@@ -17,6 +17,8 @@ export class ExampleController {
         router
             .post('/connecteduser', this.connecteduser)
             .post('/sharecontent', this.sharecontent)
+            .post('/closecontent', this.sharecontent)
+            .post('/opennoteontable', this.sharecontent)
             .get('/getconnecteduser',this.connecteduser);
         return router;
     }

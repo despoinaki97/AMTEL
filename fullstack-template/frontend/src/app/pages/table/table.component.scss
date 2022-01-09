@@ -34,8 +34,8 @@
 
 }
 
-.noteImg{
-  width:80%;
+#noteImg{
+  width:38%;
 
 }
 
@@ -43,6 +43,7 @@
   position:absolute;
   top: 40%;
   left:40%;
+  float: left;
 }
 
 #menu-item{
@@ -63,49 +64,52 @@
 
 #menu-item2{
   border: none;
-    background-color: #B4CDED;
-    box-shadow: 3px 3px 0 0 rgb(0 0 0 / 14%);
-    text-shadow: 1px 1px 0 rgb(0 0 0 / 12%);
-    border-radius: 100%;
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    color: #FFFFFF;
-    text-align: center;
-    line-height: 80px;
-    top: 36%;
-    left: 81%;
+  background-color: #B4CDED;
+  box-shadow: 3px 3px 0 0 rgb(0 0 0 / 14%);
+  text-shadow: 1px 1px 0 rgb(0 0 0 / 12%);
+  border-radius: 100%;
+  /* width: 80px; */
+  /* height: 80px; */
+  position: absolute;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 80px;
+  top: 35%;
+  /* left: 81%; */
+  width: 9%;
+  height: 17%;
 }
 
 .user1photo{
 
   position: absolute;
-  width: 16%;
-  height: 28%;
+  width: 11%;
+  height: 22%;
   border-radius: 50%;
   vertical-align: top;
-  top: 35%;
-  left: 96%;
+  top: 33%;
+  left: 48%;
 
 }
 
 .user2photo{
   position: absolute;
-  width: 16%;
-  height: 28%;
+  width: 11%;
+  height: 22%;
   border-radius: 50%;
   vertical-align: top;
-  top: 64%;
-  left:82%;
+  top: 55%;
+  
 }
 
 .user3photo{
   position: absolute;
-  width: 16%;
-  height: 28%;
+  width: 11%;
+  height: 22%;
   border-radius: 50%;
   vertical-align: top;
-  top: 4%;
-  left:82%;
+  top: 10%;
+  /* left: 82%; */
+
 
 }
