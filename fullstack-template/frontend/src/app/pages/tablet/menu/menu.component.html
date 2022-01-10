@@ -1,4 +1,4 @@
-<div class="hamburgerContainer">
+<div class="hamburgerContainer" id="ham">
     <button (click)="openProfileOptions()" class="line"></button>
     <button (click)="openProfileOptions()" class="line"></button>
     <button (click)="openProfileOptions()" class="line"></button>
@@ -6,7 +6,7 @@
 
 <ami-fullstack-profile-options id="po" style="display: none;"></ami-fullstack-profile-options>
 
-<div class="navoptions">
+<div class="navoptions" id="navop">
     <a id="WhiteboardButton" (click)="openWhiteboard()">Whiteboard</a>
     <a id="NotesButton" style="background-color: white;" (click)="openNotes()">    Notes  </a>
 </div> 
@@ -14,7 +14,14 @@
 
 <img id='whiteboard' class="responsiveImage" style="display: none;" src="assets/whiteb.png" alt="Avatar"> 
 <div id="notes">
-    <img class="responsiveImage" src="assets/notes.png" alt="Avatar"> 
+    <img id="notesimage" class="responsiveImage" src="assets/notes.png" alt="Avatar"> 
+    <img  id="chat" (click)=openChat() src="assets/bubble-chat.png" alt="Avatar"> 
     <button id="save" class="btn btn-secondary" >SAVE AS</button>
 </div>
 
+<div id="chatContainer">
+    <div id="chatWindow" style="display: none;">
+        <a id="closePO" (click)="closeChat()"> x </a>
+        <img id="chatimg" src="assets/chat.png" alt="Avatar">
+    </div>
+</div>

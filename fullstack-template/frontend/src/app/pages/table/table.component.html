@@ -1,23 +1,24 @@
 <div id="slider">
-<ami-fullstack-bubblemenu [user]="user1" id="user1"></ami-fullstack-bubblemenu>
-<ami-fullstack-bubblemenu [user]="user2" id="user2"></ami-fullstack-bubblemenu>
-<ami-fullstack-bubblemenu [user]="user3" id="user3"></ami-fullstack-bubblemenu>
-
-<ami-fullstack-carousel></ami-fullstack-carousel>
-
-<div id="mynote">
-  <button id="menu-item" (click)="closenote()"> <img class="controlbut" src="../../../assets/close (1) 1.png"/></button>
-  <div id="mynoteheader">
-    <button id="menu-item2" (click)="sharenote()"> <img class="controlbut" style="width: 50%;margin-bottom: 15%;" src="../../../assets/download_note.png"/></button>
-
-    <img class="noteImg" src="../../../assets/note.png" />
-    <div class="users">
-      <img class="user1photo" src="{{user1.photo}}"/>
-      <img class="user2photo" src="{{user2.photo}}"/>
-      <img class="user3photo" src="{{user3.photo}}"/>
+  <ami-fullstack-bubblemenu [user]="user1" id="user1"></ami-fullstack-bubblemenu>
+  <ami-fullstack-bubblemenu [user]="user2" id="user2"></ami-fullstack-bubblemenu>
+  <ami-fullstack-bubblemenu [user]="user3" id="user3"></ami-fullstack-bubblemenu>
+  
+  <ami-fullstack-carousel></ami-fullstack-carousel>
+  
+  <div id="mynote" style="display: none;">
+    <button id="menu-item" (click)="closenote()"> <img class="controlbut" src="../../../assets/close (1) 1.png"/></button>
+    <div id="mynoteheader" style="display: flex;">
+      <img id="noteImg" src="../../../assets/note2.png" />
+  
+      <div class="users" style="float:right;">
+        <button id="menu-item2" (click)="sharenote()"> <img class="controlbut" style="width: 50%;margin-bottom: 15%;" src="../../../assets/download_note.png"/></button>
+  
+        <img class="user1photo" src="{{user1.photo}}"/>
+        <img class="user2photo" src="{{user2.photo}}"/>
+        <img class="user3photo" src="{{user3.photo}}"/>
+      </div>
     </div>
   </div>
-</div>
-
-</div>
-
+  
+  </div>
+  

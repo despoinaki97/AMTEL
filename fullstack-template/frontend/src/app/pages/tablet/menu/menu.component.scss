@@ -1,199 +1,265 @@
 .hamburgerContainer {
-    background-color: #B4CDED;
-    width: 20%;
-    float: left;
+  background-color: #B4CDED;
+  width: 20%;
+  float: left;
 }
 .line {
-    width: 70%;
-    background-color: #0D1821;
-    margin-top: 18%;
-    margin-bottom: 18%;
-    margin-left: 15%;
-    margin-right: 15%;
-    display: block;
+  width: 70%;
+  background-color: #0D1821;
+  margin-top: 18%;
+  margin-bottom: 18%;
+  margin-left: 15%;
+  margin-right: 15%;
+  display: block;
 }
 
 .navoptions {
-    width: 80%;
-    background-color: white;
-    overflow: hidden;
+  width: 80%;
+  background-color: white;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.navoptions a {
+  width: 50%;
+  float: right;
+  color: #0D1821;
+  text-align: center;
+  padding: 4.4% 16px;
+  text-decoration: none;
+  font-size: 420%;
+  background-color: #B4CDED;
+}
+
+/* Change the color of links on hover */
+.navoptions a:hover {
+  background-color: white;
+  color: black;
+}
+
+.responsiveImage {
+  width: 100%;
+  height: 1500px;
+}
+
+/* Add a color to the active/current link 
+.navoptions a.active {
+  background-color: #04AA6D;
+  color: #04AA6D;
+}*/
+.btn-secondary {
+  background-color: #0D1821;
+  font-size: 350%;
+  color: #F0F4EF;
+  width: 40%;
+  line-height: 90px;
+  text-align: center;
+  border-radius: 2%;
+  margin-bottom: 1%;
+  margin-left: 50%;
+}
+
+#chat {
+  width: 15%;
+  margin-left: 10%;
+  margin-top: -10%;
+  display: inline-block;
+}
+
+#closePO {
+  font-size: 520%;
+  text-align: right;
+  margin-top: 2%;
+  margin-right: 5%;
+  color: black;
+  background-color: #344966;
+  display: block;
+}
+
+#chatContainer {
+  margin-top: -3%;
+  background-color:#344966;
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 1000px) {
+  .line{
+      padding: 0.1px;
+      margin-top: 16%;
+      margin-bottom: 16%;
   }
-  
-  /* Style the links inside the navigation bar */
   .navoptions a {
-    width: 50%;
-    float: right;
-    color: #0D1821;
-    text-align: center;
-    padding: 4.4% 16px;
-    text-decoration: none;
-    font-size: 420%;
-    background-color: #B4CDED;
+      font-size: 140%;
+      padding: 4.5% 16px;
   }
-  
-  /* Change the color of links on hover */
-  .navoptions a:hover {
-    background-color: white;
-    color: black;
-  }
-
   .responsiveImage {
-    width: 100%;
-    height: 1500px;
+    height: 100%;
   }
+}
 
-  /* Add a color to the active/current link 
-  .navoptions a.active {
-    background-color: #04AA6D;
-    color: #04AA6D;
-  }*/
+@media screen and (min-height: 1300px) and (max-height: 1400px) {
+  .navoptions a {
+      font-size: 340%;
+      padding: 3.9% 16px;
+  }
+  .responsiveImage {
+    height: 1100px;
+  }
+}
+
+
+@media screen and (min-width: 400px) and (max-width: 415px) {
+  .navoptions a {
+      font-size: 160%;
+      padding: 4.2% 16px;
+  }
+  .responsiveImage {
+    height: 530px;
+  }
   .btn-secondary {
-    background-color: #0D1821;
-    font-size: 350%;
-    color: #F0F4EF;
+    font-size: 130%;
+    width: 50%;
+    line-height: 25px;
+    margin-left: 40%;
+  }
+  #chatWindow {
+    width: 100%;
+  }
+  #closePO {
+    font-size: 290%;
+  }
+  #chatimg {
+    width: 97%;
+  }
+} //Pixel2
+
+@media screen and (min-height: 820px) and (max-height: 825px) {
+  .navoptions a {
+      font-size: 160%;
+      padding: 4.2% 16px;
+  }
+  .responsiveImage {
+    height: 650px;
+  }
+  .btn-secondary {
+    font-size: 130%;
     width: 40%;
-    line-height: 90px;
-    text-align: center;
-    border-radius: 2%;
-    margin-bottom: 1%;
+    line-height: 25px;
     margin-left: 50%;
   }
+} //Pixel2 XL
+
+@media screen and (min-width: 279px) and (max-width: 376px) {
+  .navoptions a {
+      font-size: 100%;
+      padding: 5.8% 16px;
+  }
+  .responsiveImage {
+    height: 500px;
+  }
+  .btn-secondary {
+    font-size: 130%;
+    width: 60%;
+    line-height: 16px;
+    margin-left: 30%;
+  }
+  #chatWindow {
+    width: 100%;
+  }
+  #closePO {
+    font-size: 250%;
+  }
+  #chatimg {
+    width: 97%;
+  }
+} // Galaxy Fold
+
+@media screen and (min-width: 310px) and (max-width: 330px) {
   
-  @media screen and (max-width: 1000px) {
-    .line{
-        padding: 0.1px;
-        margin-top: 16%;
-        margin-bottom: 16%;
-    }
-    .navoptions a {
-        font-size: 140%;
-        padding: 4.5% 16px;
-    }
-    .responsiveImage {
-      height: 100%;
-    }
+  .responsiveImage {
+    height: 450px;
+  }
+  
+} //iphone5
+
+@media screen and (min-width: 370px) and (max-width: 377px) {
+  
+  .responsiveImage {
+    height: 500px;
+  }
+  .btn-secondary {
+    font-size: 150%;
+    width: 40%;
+    line-height: 45px;
+    margin-left: 50%;
+    margin-bottom: 10%;
+  }
+} //iphone5
+
+@media screen and (min-width: 765px) and (max-width: 770px) {
+  .navoptions a {
+      font-size: 290%;
+      padding: 3.5% 16px;
+  }
+  .responsiveImage {
+    height: 750px;
+  }
+  .btn-secondary {
+    font-size: 150%;
+    width: 40%;
+    line-height: 45px;
+    margin-left: 50%;
+    margin-bottom: 10%;
+  }
+  #chatWindow {
+    width: 100%;
+  }
+  #closePO {
+    font-size: 350%;
+  }
+  #chatimg {
+    width: 97%;
+  }
+} // iPad
+@media screen and (min-width: 1020px) and (max-width: 1025px) {
+  .navoptions a {
+      font-size: 320%;
+      padding: 5.5% 16px;
+  }
+  .responsiveImage {
+    height: 1050px;
   }
 
-  @media screen and (min-height: 1300px) and (max-height: 1400px) {
-    .navoptions a {
-        font-size: 340%;
-        padding: 3.9% 16px;
-    }
-    .responsiveImage {
-      height: 1100px;
-    }
+  #chat {
+    margin-top: -15%;
   }
+  #chatimg{
+    width: 97%;
+  }
+} // iPad Pro
 
-
-  @media screen and (min-width: 400px) and (max-width: 415px) {
-    .navoptions a {
-        font-size: 160%;
-        padding: 4.2% 16px;
-    }
-    .responsiveImage {
-      height: 530px;
-    }
-    .btn-secondary {
-      font-size: 130%;
-      width: 50%;
-      line-height: 25px;
-      margin-left: 40%;
-    }
-  } //Pixel2
-
-  @media screen and (min-height: 820px) and (max-height: 825px) {
-    .navoptions a {
-        font-size: 160%;
-        padding: 4.2% 16px;
-    }
-    .responsiveImage {
-      height: 650px;
-    }
-    .btn-secondary {
-      font-size: 130%;
-      width: 40%;
-      line-height: 25px;
-      margin-left: 50%;
-    }
-  } //Pixel2 XL
-
-  @media screen and (min-width: 279px) and (max-width: 376px) {
-    .navoptions a {
-        font-size: 100%;
-        padding: 5.8% 16px;
-    }
-    .responsiveImage {
-      height: 500px;
-    }
-    .btn-secondary {
-      font-size: 130%;
-      width: 60%;
-      line-height: 16px;
-      margin-left: 30%;
-    }
-  } // Galaxy Fold
-
-  @media screen and (min-width: 310px) and (max-width: 330px) {
-    
-    .responsiveImage {
-      height: 450px;
-    }
-    
-  } //iphone5
-
-  @media screen and (min-width: 370px) and (max-width: 377px) {
-    
-    .responsiveImage {
-      height: 500px;
-    }
-    .btn-secondary {
-      font-size: 150%;
-      width: 40%;
-      line-height: 45px;
-      margin-left: 50%;
-      margin-bottom: 10%;
-    }
-  } //iphone5
-
-  @media screen and (min-width: 765px) and (max-width: 770px) {
-    .navoptions a {
-        font-size: 290%;
-        padding: 3.5% 16px;
-    }
-    .responsiveImage {
-      height: 750px;
-    }
-    .btn-secondary {
-      font-size: 150%;
-      width: 40%;
-      line-height: 45px;
-      margin-left: 50%;
-      margin-bottom: 10%;
-    }
-  } // iPad
-  @media screen and (min-width: 1020px) and (max-width: 1025px) {
-    .navoptions a {
-        font-size: 320%;
-        padding: 5.5% 16px;
-    }
-    .responsiveImage {
-      height: 1050px;
-    }
-  } // iPad Pro
-
-  @media screen and (min-width: 539px) and (max-width: 541px) {
-    .navoptions a {
-        font-size: 190%;
-        padding: 4.5% 16px;
-    }
-    .responsiveImage {
-      height: 520px;
-    }
-    .btn-secondary {
-      font-size: 130%;
-      width: 40%;
-      line-height: 25px;
-      margin-left: 50%;
-      margin-bottom: 10%;
-    }
-  } // Surface duo
+@media screen and (min-width: 539px) and (max-width: 541px) {
+  .navoptions a {
+      font-size: 190%;
+      padding: 4.5% 16px;
+  }
+  .responsiveImage {
+    height: 520px;
+  }
+  .btn-secondary {
+    font-size: 130%;
+    width: 40%;
+    line-height: 25px;
+    margin-left: 50%;
+    margin-bottom: 10%;
+  }
+  #chatWindow {
+    width: 100%;
+  }
+  #closePO {
+    font-size: 290%;
+  }
+  #chatimg {
+    width: 97%;
+  }
+} // Surface duo

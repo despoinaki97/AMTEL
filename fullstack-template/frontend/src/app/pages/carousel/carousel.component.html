@@ -1,5 +1,54 @@
 
-    <div class="circular-slider circular-slider-1">
+    <!-- <div class="circular-slider circular-slider-1">
+        <div class="wrapper">
+          <div class="controls">
+            <div class="controls__left">
+              <div class="icon-wrapper"><i class="far fa-arrow-alt-circle-left"></i></div>
+            </div>
+            <div class="controls__right">
+              <div class="icon-wrapper"><i class="far fa-arrow-alt-circle-right"></i></div>
+            </div>
+
+          </div>
+          <ul class="slides-holder" style="list-style: none; ">
+         
+            <li class="slides-holder__item" *ngFor="let week of weeks; let j = index" (click)="openLectures(j)"  style="padding: 0%;"><img src="{{week.photo}}" class="week" alt="img"/>
+              <ul class="lectures"  style=" width: 111%;margin-top: 2px;    margin-left: 16%;list-style: none; display: none; padding: 0%;" >
+                <div class="triangle-down"></div>
+  
+                <li class="lecture" *ngFor="let lecture of week.lectures; let i = index"  style=" transform: rotate(180deg);" (click)="chooseLecture(lecture.id,j)" >
+                  <p class="lectext">{{lecture.title}}</p>
+                  <img class= "{{'lectureImage'+i}}" style="width:100%; float:left; padding-top:12% ;padding-bottom: 12%;margin-right: 12px;" src="../../../assets/Rectangle 6.png"/>
+                  <div class="{{'mydiv'+i}}" style="display: none; width: 50%; float:right;border-radius: 50PX;">
+                    <div id="minimenu" style="width: 85px;border-radius: 50PX;">
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Share</p>
+                          <button type="radio" id="Call" name="place" class="lecmenubut" (click)="chooseshare('Call')">Call</button>
+                          <button type="radio" id="Room" name="place" class="lecmenubut" (click)="chooseshare('Room')">Room</button>
+                      </div>
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Device</p>
+                          <button type="radio" id="TV" name="device" class="lecmenubut2" (click)="chooseplace('TV')">TV</button>
+                          <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
+                      </div>
+                      <div style="display: flex;" class="minimenuchild">
+                          <button class="removebutt" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="sharebutt" style="width: 50%;border: none;font-size: 10px; ">Share</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </li>
+              
+              </ul>
+            </li>  
+        </ul>
+      
+      </div>
+    </div> -->
+
+    <div class="slider">
+      <div class="circular-slider circular-slider-1">
         <div class="wrapper">
           <div class="controls">
             <div class="controls__left">
@@ -15,30 +64,29 @@
               </div>
             </div> -->
           </div>
-          <ul class="slides-holder" style="list-style: none; ">
-         
-            <li class="slides-holder__item" *ngFor="let week of weeks; let j = index" (click)="openLectures(j)"  style="padding: 0%;"><img src="{{week.photo}}" class="week" alt="img"/>
+          <div class="slides-holder">
+            <div class="slides-holder__item slides-holder__item_active" (click)="openLectures(0)"><img src="../../../assets/week1.png" class="week" alt="img"/>
               <ul class="lectures"  style=" width: 111%;margin-top: 2px;    margin-left: 16%;list-style: none; display: none; padding: 0%;" >
                 <div class="triangle-down"></div>
   
-                <li class="lecture" *ngFor="let lecture of week.lectures; let i = index"  style=" transform: rotate(180deg);" (click)="chooseLecture(lecture.id,j)" >
+                <li class="lecture" *ngFor="let lecture of lectureslist; let i = index"  style=" transform: rotate(180deg);" (click)="chooseLecture(lecture.id,0)" >
                   <p class="lectext">{{lecture.title}}</p>
                   <img class= "{{'lectureImage'+i}}" style="width:100%; float:left; padding-top:12% ;padding-bottom: 12%;margin-right: 12px;" src="../../../assets/Rectangle 6.png"/>
                   <div class="{{'mydiv'+i}}" style="display: none; width: 50%; float:right;border-radius: 50PX;">
                     <div id="minimenu" style="width: 85px;border-radius: 50PX;">
-                      <div>
+                      <div class="minimenuchild">
                           <p class="lecmenutag">Share</p>
-                          <button class="lecmenubut">Call</button>
-                          <button class="lecmenubut">Room</button>
+                          <button type="radio" id="Call" name="place" class="lecmenubut" (click)="chooseshare('Call')">Call</button>
+                          <button type="radio" id="Room" name="place" class="lecmenubut" (click)="chooseshare('Room')">Room</button>
                       </div>
-                      <div>
+                      <div class="minimenuchild">
                           <p class="lecmenutag">Device</p>
-                          <button class="lecmenubut">TV</button>
-                          <button class="lecmenubut">Wall</button>
+                          <button type="radio" id="TV" name="device" class="lecmenubut2" (click)="chooseplace('TV')">TV</button>
+                          <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
                       </div>
-                      <div style="display: flex;">
-                          <button class="removebutt" style="width: 50%;border: none;font-size: 10px;">Remove</button>
-                          <button class="sharebutt" style="width: 50%;border: none;font-size: 10px; ">Share</button>
+                      <div style="display: flex;" class="minimenuchild">
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
                       </div>
                       
                     </div>
@@ -46,6 +94,317 @@
                 </li>
               
               </ul>
-            </li>  
-        </ul>
+
+            </div>
+            <div class="slides-holder__item slides-holder__item_active" (click)="openLectures(1)"><img src="../../../assets/week2.png" class="week" alt="img"/>
+              <ul class="lectures"  style=" width: 111%;margin-top: 2px;    margin-left: 16%;list-style: none; display: none; padding: 0%;" >
+                <div class="triangle-down"></div>
+  
+                <li class="lecture" *ngFor="let lecture of lectureslist; let i = index"  style=" transform: rotate(180deg);" (click)="chooseLecture(lecture.id,1)" >
+                  <p class="lectext">{{lecture.title}}</p>
+                  <img class= "{{'lectureImage'+i}}" style="width:100%; float:left; padding-top:12% ;padding-bottom: 12%;margin-right: 12px;" src="../../../assets/Rectangle 6.png"/>
+                  <div class="{{'mydiv'+i}}" style="display: none; width: 50%; float:right;border-radius: 50PX;">
+                    <div id="minimenu" style="width: 85px;border-radius: 50PX;">
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Share</p>
+                          <button type="radio" id="Call" name="place" class="lecmenubut" (click)="chooseshare('Call')">Call</button>
+                          <button type="radio" id="Room" name="place" class="lecmenubut" (click)="chooseshare('Room')">Room</button>
+                      </div>
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Device</p>
+                          <button type="radio" id="TV" name="device" class="lecmenubut2" (click)="chooseplace('TV')">TV</button>
+                          <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
+                      </div>
+                      <div style="display: flex;" class="minimenuchild">
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </li>
+              
+              </ul>
+
+            </div>
+            <div class="slides-holder__item slides-holder__item_active" (click)="openLectures(2)"><img src="../../../assets/week3.png" class="week" alt="img"/>
+              <ul class="lectures"  style=" width: 111%;margin-top: 2px;    margin-left: 16%;list-style: none; display: none; padding: 0%;" >
+                <div class="triangle-down"></div>
+  
+                <li class="lecture" *ngFor="let lecture of lectureslist; let i = index"  style=" transform: rotate(180deg);" (click)="chooseLecture(lecture.id,2)" >
+                  <p class="lectext">{{lecture.title}}</p>
+                  <img class= "{{'lectureImage'+i}}" style="width:100%; float:left; padding-top:12% ;padding-bottom: 12%;margin-right: 12px;" src="../../../assets/Rectangle 6.png"/>
+                  <div class="{{'mydiv'+i}}" style="display: none; width: 50%; float:right;border-radius: 50PX;">
+                    <div id="minimenu" style="width: 85px;border-radius: 50PX;">
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Share</p>
+                          <button type="radio" id="Call" name="place" class="lecmenubut" (click)="chooseshare('Call')">Call</button>
+                          <button type="radio" id="Room" name="place" class="lecmenubut" (click)="chooseshare('Room')">Room</button>
+                      </div>
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Device</p>
+                          <button type="radio" id="TV" name="device" class="lecmenubut2" (click)="chooseplace('TV')">TV</button>
+                          <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
+                      </div>
+                      <div style="display: flex;" class="minimenuchild">
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </li>
+              
+              </ul>
+
+            </div>
+            <div class="slides-holder__item slides-holder__item_active" (click)="openLectures(3)"><img src="../../../assets/week4.png" class="week" alt="img"/>
+              <ul class="lectures"  style=" width: 111%;margin-top: 2px;    margin-left: 16%;list-style: none; display: none; padding: 0%;" >
+                <div class="triangle-down"></div>
+  
+                <li class="lecture" *ngFor="let lecture of lectureslist; let i = index"  style=" transform: rotate(180deg);" (click)="chooseLecture(lecture.id,3)" >
+                  <p class="lectext">{{lecture.title}}</p>
+                  <img class= "{{'lectureImage'+i}}" style="width:100%; float:left; padding-top:12% ;padding-bottom: 12%;margin-right: 12px;" src="../../../assets/Rectangle 6.png"/>
+                  <div class="{{'mydiv'+i}}" style="display: none; width: 50%; float:right;border-radius: 50PX;">
+                    <div id="minimenu" style="width: 85px;border-radius: 50PX;">
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Share</p>
+                          <button type="radio" id="Call" name="place" class="lecmenubut" (click)="chooseshare('Call')">Call</button>
+                          <button type="radio" id="Room" name="place" class="lecmenubut" (click)="chooseshare('Room')">Room</button>
+                      </div>
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Device</p>
+                          <button type="radio" id="TV" name="device" class="lecmenubut2" (click)="chooseplace('TV')">TV</button>
+                          <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
+                      </div>
+                      <div style="display: flex;" class="minimenuchild">
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </li>
+              
+              </ul>
+
+            </div>
+            <div class="slides-holder__item slides-holder__item_active" (click)="openLectures(4)"><img src="../../../assets/week5.png" class="week" alt="img"/>
+              <ul class="lectures"  style=" width: 111%;margin-top: 2px;    margin-left: 16%;list-style: none; display: none; padding: 0%;" >
+                <div class="triangle-down"></div>
+  
+                <li class="lecture" *ngFor="let lecture of lectureslist; let i = index"  style=" transform: rotate(180deg);" (click)="chooseLecture(lecture.id,4)" >
+                  <p class="lectext">{{lecture.title}}</p>
+                  <img class= "{{'lectureImage'+i}}" style="width:100%; float:left; padding-top:12% ;padding-bottom: 12%;margin-right: 12px;" src="../../../assets/Rectangle 6.png"/>
+                  <div class="{{'mydiv'+i}}" style="display: none; width: 50%; float:right;border-radius: 50PX;">
+                    <div id="minimenu" style="width: 85px;border-radius: 50PX;">
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Share</p>
+                          <button type="radio" id="Call" name="place" class="lecmenubut" (click)="chooseshare('Call')">Call</button>
+                          <button type="radio" id="Room" name="place" class="lecmenubut" (click)="chooseshare('Room')">Room</button>
+                      </div>
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Device</p>
+                          <button type="radio" id="TV" name="device" class="lecmenubut2" (click)="chooseplace('TV')">TV</button>
+                          <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
+                      </div>
+                      <div style="display: flex;" class="minimenuchild">
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </li>
+              
+              </ul>
+
+            </div>
+            <div class="slides-holder__item slides-holder__item_active" (click)="openLectures(5)"><img src="../../../assets/week6.png" class="week" alt="img"/>
+              <ul class="lectures"  style=" width: 111%;margin-top: 2px;    margin-left: 16%;list-style: none; display: none; padding: 0%;" >
+                <div class="triangle-down"></div>
+  
+                <li class="lecture" *ngFor="let lecture of lectureslist; let i = index"  style=" transform: rotate(180deg);" (click)="chooseLecture(lecture.id,5)" >
+                  <p class="lectext">{{lecture.title}}</p>
+                  <img class= "{{'lectureImage'+i}}" style="width:100%; float:left; padding-top:12% ;padding-bottom: 12%;margin-right: 12px;" src="../../../assets/Rectangle 6.png"/>
+                  <div class="{{'mydiv'+i}}" style="display: none; width: 50%; float:right;border-radius: 50PX;">
+                    <div id="minimenu" style="width: 85px;border-radius: 50PX;">
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Share</p>
+                          <button type="radio" id="Call" name="place" class="lecmenubut" (click)="chooseshare('Call')">Call</button>
+                          <button type="radio" id="Room" name="place" class="lecmenubut" (click)="chooseshare('Room')">Room</button>
+                      </div>
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Device</p>
+                          <button type="radio" id="TV" name="device" class="lecmenubut2" (click)="chooseplace('TV')">TV</button>
+                          <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
+                      </div>
+                      <div style="display: flex;" class="minimenuchild">
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </li>
+              
+              </ul>
+
+            </div>
+            <div class="slides-holder__item slides-holder__item_active" (click)="openLectures(6)"><img src="../../../assets/week7.png" class="week" alt="img"/>
+              <ul class="lectures"  style=" width: 111%;margin-top: 2px;    margin-left: 16%;list-style: none; display: none; padding: 0%;" >
+                <div class="triangle-down"></div>
+  
+                <li class="lecture" *ngFor="let lecture of lectureslist; let i = index"  style=" transform: rotate(180deg);" (click)="chooseLecture(lecture.id,6)" >
+                  <p class="lectext">{{lecture.title}}</p>
+                  <img class= "{{'lectureImage'+i}}" style="width:100%; float:left; padding-top:12% ;padding-bottom: 12%;margin-right: 12px;" src="../../../assets/Rectangle 6.png"/>
+                  <div class="{{'mydiv'+i}}" style="display: none; width: 50%; float:right;border-radius: 50PX;">
+                    <div id="minimenu" style="width: 85px;border-radius: 50PX;">
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Share</p>
+                          <button type="radio" id="Call" name="place" class="lecmenubut" (click)="chooseshare('Call')">Call</button>
+                          <button type="radio" id="Room" name="place" class="lecmenubut" (click)="chooseshare('Room')">Room</button>
+                      </div>
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Device</p>
+                          <button type="radio" id="TV" name="device" class="lecmenubut2" (click)="chooseplace('TV')">TV</button>
+                          <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
+                      </div>
+                      <div style="display: flex;" class="minimenuchild">
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </li>
+              
+              </ul>
+
+            </div>
+            <div class="slides-holder__item slides-holder__item_active" (click)="openLectures(7)"><img src="../../../assets/week8.png" class="week" alt="img"/>
+              <ul class="lectures"  style=" width: 111%;margin-top: 2px;    margin-left: 16%;list-style: none; display: none; padding: 0%;" >
+                <div class="triangle-down"></div>
+  
+                <li class="lecture" *ngFor="let lecture of lectureslist; let i = index"  style=" transform: rotate(180deg);" (click)="chooseLecture(lecture.id,7)" >
+                  <p class="lectext">{{lecture.title}}</p>
+                  <img class= "{{'lectureImage'+i}}" style="width:100%; float:left; padding-top:12% ;padding-bottom: 12%;margin-right: 12px;" src="../../../assets/Rectangle 6.png"/>
+                  <div class="{{'mydiv'+i}}" style="display: none; width: 50%; float:right;border-radius: 50PX;">
+                    <div id="minimenu" style="width: 85px;border-radius: 50PX;">
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Share</p>
+                          <button type="radio" id="Call" name="place" class="lecmenubut" (click)="chooseshare('Call')">Call</button>
+                          <button type="radio" id="Room" name="place" class="lecmenubut" (click)="chooseshare('Room')">Room</button>
+                      </div>
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Device</p>
+                          <button type="radio" id="TV" name="device" class="lecmenubut2" (click)="chooseplace('TV')">TV</button>
+                          <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
+                      </div>
+                      <div style="display: flex;" class="minimenuchild">
+                        <button [ngClass]="{'removedisabled' : toggle, 'removeenabled': !toggle}" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                        <button [ngClass]="{'sharedisabled' : toggle1, 'shareenabled': !toggle1}" (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
+                    </div>
+                      
+                    </div>
+                  </div>
+                </li>
+              
+              </ul>
+
+            </div>
+            <div class="slides-holder__item slides-holder__item_active" (click)="openLectures(8)"><img src="../../../assets/week9.png" class="week" alt="img"/>
+              <ul class="lectures"  style=" width: 111%;margin-top: 2px;    margin-left: 16%;list-style: none; display: none; padding: 0%;" >
+                <div class="triangle-down"></div>
+  
+                <li class="lecture" *ngFor="let lecture of lectureslist; let i = index"  style=" transform: rotate(180deg);" (click)="chooseLecture(lecture.id,8)" >
+                  <p class="lectext">{{lecture.title}}</p>
+                  <img class= "{{'lectureImage'+i}}" style="width:100%; float:left; padding-top:12% ;padding-bottom: 12%;margin-right: 12px;" src="../../../assets/Rectangle 6.png"/>
+                  <div class="{{'mydiv'+i}}" style="display: none; width: 50%; float:right;border-radius: 50PX;">
+                    <div id="minimenu" style="width: 85px;border-radius: 50PX;">
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Share</p>
+                          <button type="radio" id="Call" name="place" class="lecmenubut" (click)="chooseshare('Call')">Call</button>
+                          <button type="radio" id="Room" name="place" class="lecmenubut" (click)="chooseshare('Room')">Room</button>
+                      </div>
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Device</p>
+                          <button type="radio" id="TV" name="device" class="lecmenubut2" (click)="chooseplace('TV')">TV</button>
+                          <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
+                      </div>
+                      <div style="display: flex;" class="minimenuchild">
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </li>
+              
+              </ul>
+
+            </div>
+            <div class="slides-holder__item slides-holder__item_active" (click)="openLectures(9)"><img src="../../../assets/week10.png" class="week" alt="img"/>
+              <ul class="lectures"  style=" width: 111%;margin-top: 2px;    margin-left: 16%;list-style: none; display: none; padding: 0%;" >
+                <div class="triangle-down"></div>
+  
+                <li class="lecture" *ngFor="let lecture of lectureslist; let i = index"  style=" transform: rotate(180deg);" (click)="chooseLecture(lecture.id,9)" >
+                  <p class="lectext">{{lecture.title}}</p>
+                  <img class= "{{'lectureImage'+i}}" style="width:100%; float:left; padding-top:12% ;padding-bottom: 12%;margin-right: 12px;" src="../../../assets/Rectangle 6.png"/>
+                  <div class="{{'mydiv'+i}}" style="display: none; width: 50%; float:right;border-radius: 50PX;">
+                    <div id="minimenu" style="width: 85px;border-radius: 50PX;">
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Share</p>
+                          <button type="radio" id="Call" name="place" class="lecmenubut" (click)="chooseshare('Call')">Call</button>
+                          <button type="radio" id="Room" name="place" class="lecmenubut" (click)="chooseshare('Room')">Room</button>
+                      </div>
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Device</p>
+                          <button type="radio" id="TV" name="device" class="lecmenubut2" (click)="chooseplace('TV')">TV</button>
+                          <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
+                      </div>
+                      <div style="display: flex;" class="minimenuchild">
+                          <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                          <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </li>
+              
+              </ul>
+
+            </div>
+            <div class="slides-holder__item slides-holder__item_active" (click)="openLectures(10)"><img src="../../../assets/week11.png" class="week" alt="img"/>
+              <ul class="lectures"  style=" width: 111%;margin-top: 2px;    margin-left: 16%;list-style: none; display: none; padding: 0%;" >
+                <div class="triangle-down"></div>
+  
+                <li class="lecture" *ngFor="let lecture of lectureslist; let i = index"  style=" transform: rotate(180deg);" (click)="chooseLecture(lecture.id,10)" >
+                  <p class="lectext">{{lecture.title}}</p>
+                  <img class= "{{'lectureImage'+i}}" style="width:100%; float:left; padding-top:12% ;padding-bottom: 12%;margin-right: 12px;" src="../../../assets/Rectangle 6.png"/>
+                  <div class="{{'mydiv'+i}}" style="display: none; width: 50%; float:right;border-radius: 50PX;">
+                    <div id="minimenu" style="width: 85px;border-radius: 50PX;">
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Share</p>
+                          <button type="radio" id="Call" name="place" class="lecmenubut"  (click)="chooseshare('Call')">Call</button>
+                          <button type="radio" id="Room" name="place" class="lecmenubut" (click)="chooseshare('Room')">Room</button>
+                      </div>
+                      <div class="minimenuchild">
+                          <p class="lecmenutag">Device</p>
+                          <button type="radio" id="TV" name="device" class="lecmenubut2" (click)="chooseplace('TV')">TV</button>
+                          <button type="radio" id="Wall" name="device" class="lecmenubut2" (click)="chooseplace('Wall')">Wall</button>
+                      </div>
+                      <div style="display: flex;" class="minimenuchild">
+                        <button class="removebutt" (click)="closelecture()" style="width: 50%;border: none;font-size: 10px;">Remove</button>
+                        <button class="sharebutt"  (click)="sharelecture()" style="width: 50%;border: none;font-size: 10px; ">Share</button>
+                    </div>
+                      
+                    </div>
+                  </div>
+                </li>             
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>

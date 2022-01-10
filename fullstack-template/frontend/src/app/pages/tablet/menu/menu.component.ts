@@ -42,6 +42,39 @@ export class MenuComponent implements OnInit {
     profileOp.style.display = "block";
   }
 
+  openChat() {
+    let wb = document.getElementById("whiteboard") as HTMLElement;
+    wb.style.display = "none";
+    let notesimage = document.getElementById("notesimage") as HTMLElement;
+    notesimage.style.display = "none";
+    let save = document.getElementById("save") as HTMLElement;
+    save.style.display = "none";
+    let navop = document.getElementById("navop") as HTMLElement;
+    navop.style.display = "none";
+    let ham = document.getElementById("ham") as HTMLElement;
+    ham.style.display = "none";
+    let chat = document.getElementById("chat") as HTMLElement;
+    chat.style.display = "none";
+    let chatWindow = document.getElementById("chatWindow") as HTMLElement;
+    chatWindow.style.display = "block";
+  }
+
+  closeChat() {
+    let notesimage = document.getElementById("notesimage") as HTMLElement;
+    notesimage.style.display = "block";
+    let save = document.getElementById("save") as HTMLElement;
+    save.style.display = "block";
+    let navop = document.getElementById("navop") as HTMLElement;
+    navop.style.display = "block";
+    let ham = document.getElementById("ham") as HTMLElement;
+    ham.style.display = "block";
+    let chat = document.getElementById("chat") as HTMLElement;
+    chat.style.display = "block";
+    let chatWindow = document.getElementById("chatWindow") as HTMLElement;
+    chatWindow.style.display = "none";
+  }
+
+
   ngOnInit() {
   }
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { transform } from 'lodash';
 import { on } from 'process';
 import { $ } from 'protractor';
+import { SocketsService } from 'src/app/global/services';
 import { UsersService } from 'src/app/global/services/users/users.service';
 import {Lecture} from 'src/app/Objects/Lecture'
 import { User } from 'src/app/Objects/User';
@@ -22,8 +23,10 @@ export class TableComponent implements OnInit {
   user1 :User;
   user2:User;
   user3:User;
+  public socketEvents:{event: string,message:any}[];
 
-  constructor(private users:UsersService) { 
+  constructor(private users:UsersService,private socketservice:SocketsService) { 
+    this.socketEvents=[];
     this.user1 = users.user1;
     this.user2 = users.user2;
     this.user3 = users.user3;
@@ -43,17 +46,63 @@ export class TableComponent implements OnInit {
 
 
   sharenote(){
-    let shelement = document.getElementsByClassName("users")[0] as HTMLElement;
+    let shelement = document.getElementsByClassName("user1photo")[0] as HTMLElement;
+    let shelement2 = document.getElementsByClassName("user2photo")[0] as HTMLElement;
+    let shelement3 = document.getElementsByClassName("user3photo")[0] as HTMLElement;
+
     if (shelement.style.display === "none") {
       shelement.style.display = "block";
     } else {
       shelement.style.display = "none";
+    }
+
+    if (shelement2.style.display === "none") {
+      shelement2.style.display = "block";
+    } else {
+      shelement2.style.display = "none";
+    }
+
+    if (shelement3.style.display === "none") {
+      shelement3.style.display = "block";
+    } else {
+      shelement3.style.display = "none";
     }
   }
 
   ngOnInit() {
 
     this.dragElement(document.getElementById("mynote"));
+
+
+    this.socketservice.syncMessages("connecteduser").subscribe(msg=>{
+      this.socketEvents.push(msg);
+      console.log(msg);
+      if(msg.message.userid == 1)
+      {
+        document.getElementById("user1").style.display="block";
+        console.log(1);
+      }
+      if (msg.message.userid == 2){
+        document.getElementById("user2").style.display="block";
+        console.log(2);
+      }
+      if (msg.message.userid == 3){
+        document.getElementById("user3").style.display="block";
+
+        console.log(3);
+      }
+    })
+
+
+    this.socketservice.syncMessages("opennoteontable").subscribe(msg=>{
+      this.socketEvents.push(msg);
+      console.log(msg);
+      let mynote = document.getElementById("mynote");
+      mynote.style.display = "block";
+      let noteimg = document.getElementById("noteImg") as HTMLImageElement;
+      noteimg.src = msg.message.note;
+   
+    })
 
 
     document.getElementById("slider").addEventListener('dblclick',function (){
