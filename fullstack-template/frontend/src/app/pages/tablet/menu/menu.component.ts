@@ -14,8 +14,12 @@ export class MenuComponent implements OnInit {
 
     let wb = document.getElementById("whiteboard") as HTMLElement;
     wb.style.display = "block";
-    let notes = document.getElementById("notes") as HTMLElement;
-    notes.style.display = "none";
+    let notesimg = document.getElementById("notesimage") as HTMLElement;
+    notesimg.style.display = "none";
+    let chat = document.getElementById("chat") as HTMLElement;
+    chat.style.display = "none";
+    let save = document.getElementById("save") as HTMLElement;
+    save.style.display = "none";
 
     let wbButton = document.getElementById("WhiteboardButton") as HTMLElement;
     wbButton.style.backgroundColor = "white";
@@ -26,8 +30,12 @@ export class MenuComponent implements OnInit {
   openNotes() {
     console.log("Open notes..")
     
-    let notes = document.getElementById("notes") as HTMLElement;
-    notes.style.display = "block";
+    let notesimg = document.getElementById("notesimage") as HTMLElement;
+    notesimg.style.display = "block";
+    let chat = document.getElementById("chat") as HTMLElement;
+    chat.style.display = "block";
+    let save = document.getElementById("save") as HTMLElement;
+    save.style.display = "block";
     let wb = document.getElementById("whiteboard") as HTMLElement;
     wb.style.display = "none";
 

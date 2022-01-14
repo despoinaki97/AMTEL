@@ -16,7 +16,7 @@
     font-size: 220%;
     margin-bottom: 1%;
   }
-
+  
   #title {
       margin-top: 40%;
       margin-bottom: 15%;
@@ -99,3 +99,8 @@
       font-size: 90%;
     }
   } 
+  @media screen and (min-height: 1300px){
+    #title {
+      margin-top: 20%;
+    }
+  }
