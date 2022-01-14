@@ -18,6 +18,7 @@ export class ExampleController {
             .post('/sharecontent', this.sharecontent)
             .post('/closecontent', this.sharecontent)
             .post('/opennoteontable', this.sharecontent)
+            .post('/sendnoteto', this.sharecontent)
             .get('/getconnecteduser',this.connecteduser);
         return router;
     }
