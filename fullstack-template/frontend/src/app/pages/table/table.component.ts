@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { transform } from 'lodash';
 import { on } from 'process';
@@ -7,6 +8,7 @@ import { UsersService } from 'src/app/global/services/users/users.service';
 import {Lecture} from 'src/app/Objects/Lecture'
 import { User } from 'src/app/Objects/User';
 import { BubblemenuComponent } from 'src/app/pages/bubblemenu/bubblemenu.component';
+import { environment } from 'src/environments/environment';
 declare const window:any
 @Component({
   selector: 'my-table',
@@ -23,9 +25,11 @@ export class TableComponent implements OnInit {
   user1 :User;
   user2:User;
   user3:User;
+  hostURI;
   public socketEvents:{event: string,message:any}[];
 
-  constructor(private users:UsersService,private socketservice:SocketsService) { 
+  constructor(private users:UsersService,private socketservice:SocketsService,private http:HttpClient) { 
+    this.hostURI = environment.host;
     this.socketEvents=[];
     this.user1 = users.user1;
     this.user2 = users.user2;
@@ -101,9 +105,12 @@ export class TableComponent implements OnInit {
       mynote.style.display = "block";
       let noteimg = document.getElementById("noteImg") as HTMLImageElement;
       noteimg.src = msg.message.note;
-   
+      let sender = mynote.getElementsByClassName("user"+msg.message.user.id+"photo")[0] as HTMLElement;
+
+      sender.style.opacity = "0.5";
     })
 
+   
 
     document.getElementById("slider").addEventListener('dblclick',function (){
       console.log("double click");
@@ -140,6 +147,17 @@ console.log(despobutton);
 //  });
 
   
+}
+
+sendnoteto(usr:String){
+  return this.http.post(`${this.hostURI}/api/example/sendnoteto`,
+    {
+      message:{
+        note:"HY469-Introduction",
+        touser:usr
+      },
+      event:"sendnoteto"
+    })
 }
 
 

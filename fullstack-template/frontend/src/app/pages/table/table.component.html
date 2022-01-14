@@ -13,9 +13,9 @@
       <div class="users" style="float:right;">
         <button id="menu-item2" (click)="sharenote()"> <img class="controlbut" style="width: 50%;margin-bottom: 15%;" src="../../../assets/download_note.png"/></button>
   
-        <img class="user1photo" src="{{user1.photo}}"/>
-        <img class="user2photo" src="{{user2.photo}}"/>
-        <img class="user3photo" src="{{user3.photo}}"/>
+        <img class="user1photo" src="{{user1.photo}}" (click)="sendnoteto('user1').subscribe()"/>
+        <img class="user2photo" src="{{user2.photo}}" (click)="sendnoteto('user2').subscribe()"/>
+        <img class="user3photo" src="{{user3.photo}}" (click)="sendnoteto('user3').subscribe()"/>
       </div>
     </div>
   </div>
