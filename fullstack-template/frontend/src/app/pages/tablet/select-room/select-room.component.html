@@ -1,14 +1,16 @@
 <div class="mainContainer">
 
     <label id="title"><b>AMTEL</b></label>
-  
+
+    <label class="errormes" id="wrongroom" style="display: none;">An other user is already in a differrent room!</label>
+
     <div class="dropdown">
       <button class="dropbtn">Select room</button>
       <div class="dropdown-content">
-        <a (click)="userSelectedCourse(469)" routerLink="/menu" >HY-469</a>
-        <a (click)="userSelectedCourse(240)" routerLink="/menu">HY-240</a>
-        <a (click)="userSelectedCourse(364)" routerLink="/menu">HY-364</a>
-        <a (click)="userSelectedCourse(360)" routerLink="/menu">HY-360</a>
+        <a (click)="userSelectedCourse(469)" >HY-469</a>
+        <a (click)="userSelectedCourse(240)" >HY-240</a>
+        <a (click)="userSelectedCourse(364)" >HY-364</a>
+        <a (click)="userSelectedCourse(360)" >HY-360</a>
       </div>
     </div>
       

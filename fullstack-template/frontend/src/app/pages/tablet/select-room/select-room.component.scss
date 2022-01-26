@@ -80,6 +80,16 @@
   
   .dropdown:hover .dropbtn {}
 
+  .errormes {
+    color: red;
+    display: block;
+    width: 100%;
+    margin-left: 11%;
+    text-align: left;
+    font-size: 90%;
+    margin-bottom: 1%;
+  }
+
   /* Change styles for span and cancel button on extra small screens */
   @media screen and (max-width: 1030px) {
     span.psw {

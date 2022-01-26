@@ -256,21 +256,21 @@
   }
 } // Surface duo
 
-@media screen and (min-height: 1300px) and (max-height: 1360px){
+@media screen and (min-height: 1300px) {
   
   .navoptions a {
       font-size: 320%;
       padding: 3.9% 16px;
   }
   .responsiveImage {
-    height: 1100px;
+    height: 1050px;
   }
   .btn-secondary {
     font-size: 180%;
     width: 40%;
     line-height: 100px;
     margin-left: 55%;
-    margin-top: -5%;
+    margin-top: 4%;
     background-color: #0D1821;
     text-align: center;
     border-radius: 2%;
