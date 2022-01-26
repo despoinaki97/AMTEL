@@ -29,12 +29,12 @@ export class SelectRoomComponent implements OnInit {
     }
     else if(this.users.user2.sessionCounter > 0){
       this.users.user2.course = course;
-      this.connuser(this.users.user2.id, this.users.user1.course);
+      this.connuser(this.users.user2.id, this.users.user2.course);
 
     } 
     else if(this.users.user3.sessionCounter > 0){
       this.users.user3.course = course;
-      this.connuser(this.users.user3.id, this.users.user1.course);
+      this.connuser(this.users.user3.id, this.users.user3.course);
 
     } 
     

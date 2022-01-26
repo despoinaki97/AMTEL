@@ -8,6 +8,7 @@ import { UsersService } from 'src/app/global/services/users/users.service';
 })
 export class TvEmptyComponent implements OnInit {
   course:string;
+  currcourse:string;
   public socketEvents:{event: string,message:any}[];
 
   constructor(private users:UsersService,private Socket:SocketsService) { 
@@ -18,7 +19,16 @@ export class TvEmptyComponent implements OnInit {
     this.Socket.syncMessages("connecteduser").subscribe(msg=>{
       this.socketEvents.push(msg);
       console.log(msg);
-        this.course="HY-" + msg.message.course+ " Room";
+        if(this.currcourse!=null && msg.message.course !=this.currcourse )
+        {
+          this.course="HY-" + this.currcourse + " Room";
+        }
+        else if(this.currcourse == null){  
+          this.currcourse = msg.message.course;
+          this.course="HY-" + msg.message.course+ " Room";
+        }
+
+
         console.log(this.course);
     })  }
 

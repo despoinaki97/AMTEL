@@ -68,7 +68,7 @@
 
 // #Wall:active{
 //   background-color: #B4CDED;
-// }
+// }  
 
 .lecmenubut2{
   border-style: solid;
@@ -79,9 +79,13 @@
   background-color: rgb(241, 241, 241);
 
 }
-// .lecmenubut:focus{
-//   background-color: #B4CDED;
-// }
+.lecmenubut:active{
+  background-color: #B4CDED;
+}
+
+.lecmenubut2:active{
+  background-color: #B4CDED;
+}
 
 .lecmenutag{
   border-style: solid;
@@ -424,16 +428,16 @@
         font-size: 1.5em;
         opacity: .7; }
     .circular-slider .wrapper .controls__left, .circular-slider .wrapper .controls__right {
-      top: 50%; }
+      top: 95%; }
     .circular-slider .wrapper .controls__left {
-      left: 0;
+      left: 5px;
       -webkit-transform: translateY(-50%);
           -ms-transform: translateY(-50%);
               transform: translateY(-50%); }
       .circular-slider .wrapper .controls__left:hover {
         left: 0; }
     .circular-slider .wrapper .controls__right {
-      right: 0;
+      right: 5px;
       -webkit-transform: translate(0%, -50%);
           -ms-transform: translate(0%, -50%);
               transform: translate(0%, -50%); }
