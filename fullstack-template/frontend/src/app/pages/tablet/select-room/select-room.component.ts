@@ -24,18 +24,32 @@ export class SelectRoomComponent implements OnInit {
   userSelectedCourse(course, user: User) {
 
     if(this.users.user1.sessionCounter > 0) {
-      this.users.user1.course = course;
-      this.connuser(this.users.user1.id, this.users.user1.course);
+      if(course != 364 && course != 360 && course != 240) {
+        this.users.user1.course = course;
+        this.connuser(this.users.user1.id, this.users.user1.course);
+        this.router.navigate(['/menu']);
+      }
+      else{
+        let wrongroom = document.getElementById("wrongroom") as HTMLElement;
+        wrongroom.style.display = "block";
+      }
+      
     }
     else if(this.users.user2.sessionCounter > 0){
       this.users.user2.course = course;
       this.connuser(this.users.user2.id, this.users.user1.course);
-
+      this.router.navigate(['/menu']);
     } 
     else if(this.users.user3.sessionCounter > 0){
-      this.users.user3.course = course;
-      this.connuser(this.users.user3.id, this.users.user1.course);
-
+      if(course != 364 && course != 360 && course != 240) {
+        this.users.user3.course = course;
+        this.connuser(this.users.user3.id, this.users.user1.course);
+        this.router.navigate(['/menu']);
+      }
+      else{
+        let wrongroom = document.getElementById("wrongroom") as HTMLElement;
+        wrongroom.style.display = "block";
+      }
     } 
     
     console.log(this.users.user1.course);
