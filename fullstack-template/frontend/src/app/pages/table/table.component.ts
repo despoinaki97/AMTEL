@@ -75,7 +75,7 @@ export class TableComponent implements OnInit {
 
   ngOnInit() {
 
-    this.dragElement(document.getElementById("mynote"));
+    // this.dragElement(document.getElementById("mynote"));
 
 
     this.socketservice.syncMessages("connecteduser").subscribe(msg=>{
@@ -122,7 +122,12 @@ export class TableComponent implements OnInit {
       }
    });
 
-    this.bbmenu.dragElement(document.getElementById("user1"));
+   let sl = document.getElementById("slider");
+
+   this.dragCarousel(sl.getElementsByClassName("slides-holder")[0] as HTMLElement);
+
+
+    // this.bbmenu.dragElement(document.getElementById("user1"));
       
 
     let user3elem = document.getElementById('user1');
@@ -132,10 +137,10 @@ console.log(despobutton);
   
     //  user3elem.addEventListener('click',this.bbmenu3.openreactions);
 
-   this.bbmenu2.dragElement(document.getElementById("user2"));
+  //  this.bbmenu2.dragElement(document.getElementById("user2"));
     //console.log(this.bbmenu);
     
-    this.bbmenu3.dragElement(document.getElementById("user3"));
+    // this.bbmenu3.dragElement(document.getElementById("user3"));
 
    
 
@@ -160,16 +165,13 @@ sendnoteto(usr:String){
     })
 }
 
-
- dragElement(elmnt) {
+dragCarousel(elmnt){
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
-    // if present, the header is where you move the DIV from:
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-  } else {
-    // otherwise, move the DIV from anywhere inside the DIV:
-    elmnt.onmousedown = dragMouseDown;
-   }
+  var center_x=0,center_y=0;
+  var click_degrees =0;
+  var degrees=0;
+  var degreesminus=0;
+  elmnt.onmousedown = dragMouseDown;
 
   function dragMouseDown(e) {
     e = e || window.event;
@@ -177,10 +179,25 @@ sendnoteto(usr:String){
     // get the mouse cursor position at startup:
     pos3 = e.clientX;
     pos4 = e.clientY;
+    center_x = e.clientX;
+    center_y = e.clientY;
+    // const radius	= e.clientWidth / 2;
+    // center_x	= e.offset().left + radius;
+    // center_y	= e.offset().top + radius;
+    // click_degrees = get_degrees(e.pageX, e.pageY);
+
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
   }
+
+  function get_degrees(mouse_x, mouse_y) {
+
+		const radians	= Math.atan2(mouse_x - center_x, mouse_y - center_y);
+		const degrees	= Math.round((radians * (180 / Math.PI) * -1) + 100);
+
+		return degrees;
+	}
 
   function elementDrag(e) {
     e = e || window.event;
@@ -190,9 +207,25 @@ sendnoteto(usr:String){
     pos2 = pos4 - e.clientY;
     pos3 = e.clientX;
     pos4 = e.clientY;
+    // degrees = get_degrees(e.pageX, e.pageY) - click_degrees;
+    degrees += 1;
+    degreesminus -= 1;
+
+    elmnt.style.transform = "rotateZ("+ degrees +"deg)";
+
     // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    // if(elmnt.offsetTop > pos4 && elmnt.offsetLeft > pos3  ){
+    //   elmnt.style.transform = "rotateZ("+ degrees +"deg)";
+    //   console.log("-");
+    // }else{
+    //   elmnt.style.transform = "rotateZ("+ (-degrees) +"deg)";
+    //   console.log("+");
+
+    // }
+
+    
+    // elmnt.style.transform = "rotate("+ (elmnt.offsetLeft - pos1) +"deg)";
+
   }
 
   function closeDragElement() {
@@ -201,5 +234,46 @@ sendnoteto(usr:String){
     document.onmousemove = null;
   }
 }
+
+//  dragElement(elmnt) {
+//   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+//   if (document.getElementById(elmnt.id + "header")) {
+//     // if present, the header is where you move the DIV from:
+//     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+//   } else {
+//     // otherwise, move the DIV from anywhere inside the DIV:
+//     elmnt.onmousedown = dragMouseDown;
+//    }
+
+//   function dragMouseDown(e) {
+//     e = e || window.event;
+//     e.preventDefault();
+//     // get the mouse cursor position at startup:
+//     pos3 = e.clientX;
+//     pos4 = e.clientY;
+//     document.onmouseup = closeDragElement;
+//     // call a function whenever the cursor moves:
+//     document.onmousemove = elementDrag;
+//   }
+
+//   function elementDrag(e) {
+//     e = e || window.event;
+//     e.preventDefault();
+//     // calculate the new cursor position:
+//     pos1 = pos3 - e.clientX;
+//     pos2 = pos4 - e.clientY;
+//     pos3 = e.clientX;
+//     pos4 = e.clientY;
+//     // set the element's new position:
+//     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+//     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+//   }
+
+//   function closeDragElement() {
+//     // stop moving when mouse button is released:
+//     document.onmouseup = null;
+//     document.onmousemove = null;
+//   }
+// }
 
 }

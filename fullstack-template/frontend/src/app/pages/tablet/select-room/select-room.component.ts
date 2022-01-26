@@ -37,13 +37,13 @@ export class SelectRoomComponent implements OnInit {
     }
     else if(this.users.user2.sessionCounter > 0){
       this.users.user2.course = course;
-      this.connuser(this.users.user2.id, this.users.user1.course);
+      this.connuser(this.users.user2.id, this.users.user2.course);
       this.router.navigate(['/menu']);
     } 
     else if(this.users.user3.sessionCounter > 0){
       if(course != 364 && course != 360 && course != 240) {
         this.users.user3.course = course;
-        this.connuser(this.users.user3.id, this.users.user1.course);
+        this.connuser(this.users.user3.id, this.users.user3.course);
         this.router.navigate(['/menu']);
       }
       else{
@@ -51,7 +51,7 @@ export class SelectRoomComponent implements OnInit {
         wrongroom.style.display = "block";
       }
     } 
-    
+
     console.log(this.users.user1.course);
     console.log(this.users.user2.course);
     console.log(this.users.user3.course);

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing';
 import { TableComponent } from './pages/table/table.component';
@@ -16,6 +16,8 @@ import { CarouselComponent } from './pages/carousel/carousel.component';
 import { WallSharingComponent } from './pages/wall-sharing/wall-sharing.component';
 import { TvEmptyComponent } from './pages/tv-empty/tv-empty.component';
 import { NotesComponent } from './pages/tablet/notes/notes.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WallStartComponent } from './wall-start/wall-start.component';
 
 
 @NgModule({
@@ -31,14 +33,17 @@ import { NotesComponent } from './pages/tablet/notes/notes.component';
     CarouselComponent,
     WallSharingComponent,
     TvEmptyComponent,
-    NotesComponent
+    NotesComponent,
+    WallStartComponent
 
   ],
   imports: [
+    DragDropModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
